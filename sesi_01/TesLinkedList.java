@@ -1,6 +1,7 @@
 import java.util.LinkedList;
 
 public class TesLinkedList{
+
     public static void main (String args[]) {
         LinkedList<String> buah = new LinkedList<>();
 
