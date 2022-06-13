@@ -32,7 +32,7 @@
     jika berhasil maka akan muncul file dengan nama "nama_file.class"
 
 5. execute program Java\
-    pastikan file sudah di compile dahulu (No.4). jika sudah, buka terminal dan ketik perintah "java nama_file_yang_sudah_dicompile":
+    pastikan file sudah di compile dahulu (No.4). jika sudah, buka terminal dan ketik perintah\ "java nama_file_yang_sudah_dicompile":
     ```
     $ java nama_file
     ```
