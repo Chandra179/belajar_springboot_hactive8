@@ -15,23 +15,25 @@
     2.5 click "new" dan masukan path yang sudah di copy di bagian 2.1
 
 3. cek instalasi java\
-    buka terminal
+    buka terminal dan ketik perintah dibawah
     ```
     $ java
     $ java -version
     ```
 
 4. compile file java\
-    buka terminal dan masuk ke folder yang ada file dengan ekstensi .java
+    buka terminal dan masuk ke folder yang ada file dengan ekstensi .java\
+    kompilasi file menggunakan keyword "javac" + nama_file.java
     ```
     $ cd C:\Users\095047\Desktop\belajar_springboot_hactive8\sesi_01
-    $ javac HelloWorld.java
+    $ javac nama_file.java
     ```
-    jika berhasil maka akan muncul file dengan nama "HelloWorld.class"
+    ekstensi file yang sudah di compile -> .class\
+    jika berhasil maka akan muncul file dengan nama "nama_file.class"
 
 5. execute program Java\
-    pastikan file sudah di compile dahulu. jika sudah, buka terminal:
+    pastikan file sudah di compile dahulu (No.4). jika sudah, buka terminal dan ketik perintah "java nama_file_yang_sudah_dicompile":
     ```
-    $ java HelloWorld
+    $ java nama_file
     ```
-    jika berhasil maka akan muncul file dengan nama "HelloWorld.class"
+    jika berhasil maka akan muncul file dengan nama "nama_file.class"
