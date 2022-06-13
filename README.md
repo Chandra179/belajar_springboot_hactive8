@@ -6,8 +6,8 @@
 1. download JDK versi 17
     https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
 
-2. set environment variable
-    2.1 ambil path instalasi ..\bin. 
+2. set environment variable  
+    2.1 ambil path instalasi ..\bin  
         contoh -> C:\Program Files\Java\jdk1.8.0_333\bin
     2.2 Edit the system environment variable
     2.3 click "Environment Variable"
