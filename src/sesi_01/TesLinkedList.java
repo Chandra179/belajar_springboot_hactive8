@@ -1,15 +1,14 @@
+package sesi_01;
+
 import java.util.LinkedList;
 
 public class TesLinkedList{
-
     public static void main (String args[]) {
         LinkedList<String> buah = new LinkedList<>();
 
         // sebelum inisialisasi
         System.out.println("Nama buah : " + buah);
-
-
-
+        
         buah.add("jambu");
         buah.add("durian");
         buah.add("semangka");
@@ -20,7 +19,7 @@ public class TesLinkedList{
         System.out.println("\n====================");
         System.out.println("PENGECEKAN APAKAH KOSONG");
         System.out.println("====================");
-        
+
         if (buah.isEmpty()) {
             System.out.println("buah kosong");
         } else {

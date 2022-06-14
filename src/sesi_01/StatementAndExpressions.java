@@ -1,3 +1,5 @@
+package sesi_01;
+
 public class StatementAndExpressions {
 	public static void main (String args[]) {
 		System.out.println("Hello world");

@@ -1,3 +1,5 @@
+package sesi_01;
+
 public class PrintVsPrintln {
 	public static void main (String args[]) {
 		System.out.print("ini adalah teks print()");

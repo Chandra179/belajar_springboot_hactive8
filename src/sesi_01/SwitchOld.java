@@ -1,3 +1,5 @@
+package sesi_01;
+
 public class SwitchOld {
 	public static void main (String args[]) {
 		String result = "";

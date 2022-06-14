@@ -1,3 +1,4 @@
+package sesi_01;
 public class SwitchNew {
 	public static void main (String args[]) {
 		String day = "dsfsdfsdM";
