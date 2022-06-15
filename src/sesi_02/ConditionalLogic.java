@@ -15,14 +15,14 @@ public class ConditionalLogic {
 		int k = 5;
 		int z = 10;
 
-		hasil = k < z;
-		hasil = k > z;
-		hasil = k <= 5;
-		hasil = k >= 11;
-		hasil = k == z;
-		hasil = k != z;
-		hasil = k > z || k < z;
-		hasil = 3 < k && k < 6;
-		hasil = !hasil;
+		hasil = k < z; // true
+		hasil = k > z; // false
+		hasil = k <= 5; // true
+		hasil = k >= 11; // false
+		hasil = k == z; // false
+		hasil = k != z; // true
+		hasil = k > z || k < z; // true
+		hasil = 3 < k && k < 6; // false
+		hasil = !hasil; // false
 	}
 }
