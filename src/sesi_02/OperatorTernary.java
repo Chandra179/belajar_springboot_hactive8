@@ -1,16 +1,19 @@
 package sesi_02;
 
-
 public class OperatorTernary {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		mainTernary();
+	}
+
+	private static void mainTernary() {
 		boolean suka = true;
-		String jawaban;
+		System.out.println(cekJawab(suka));
+	}
 
-		jawaban = suka ? "iya" : "tidak";
-
-		System.out.println(jawaban);
+	private static String cekJawab(boolean suka) {
+		String jawaban = suka ? "iya" : "tidak";
+		return jawaban;
 	}
 
 }
