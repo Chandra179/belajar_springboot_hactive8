@@ -1,5 +1,6 @@
 package sesi_02;
 
+
 public class ConditionalLogic {
 	public static void main(String[] args) {
 		int x = 5;

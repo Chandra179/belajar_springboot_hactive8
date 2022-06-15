@@ -1,5 +1,6 @@
 package sesi_02;
 
+
 import java.util.Scanner;
 
 public class CekGraduation {
