@@ -2,7 +2,7 @@ package sesi_01;
 
 import java.util.LinkedList;
 
-public class TesLinkedList{
+public class LinkedListBuah{
     public static void main (String args[]) {
         LinkedList<String> buah = new LinkedList<>();
 
