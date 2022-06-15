@@ -20,7 +20,6 @@ public class PerulanganWhile {
 			if (jawab.equalsIgnoreCase("ya")) {
 				running = false;
 			}
-
 			counter++;
 		}
 		System.out.println("Anda sudah melakukan perulangan sebanyak " + counter + " kali");
