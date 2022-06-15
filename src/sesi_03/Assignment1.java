@@ -10,8 +10,8 @@ public class Assignment1 {
 
 		Scanner scan = new Scanner(System.in);
 
-
 		System.out.print("Input r : ");
+
 		r = scan.nextInt();
 
 		scan.close();
