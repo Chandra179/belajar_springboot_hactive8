@@ -26,7 +26,7 @@ public class Kelas {
 			if (x != 0 && x % 3 == 0) {
 				System.out.println("");
 			}
-			System.out.print("| " + murid.get(x) + " |   ");
+			System.out.print(String.format("| %s | %10s", murid.get(x), ""));
 		}
 		System.out.println("\n====================================");
 	}
