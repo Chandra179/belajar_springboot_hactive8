@@ -22,7 +22,7 @@ public class Kelas {
 		murid.add(student);
 
 		System.out.println("====================================");
-		for (int x = 0; x < murid.size(); x++) { // x1 x2 x3 x4
+		for (int x = 0; x < murid.size(); x++) {
 			if (x != 0 && x % 3 == 0) {
 				System.out.println("");
 			}
@@ -48,10 +48,9 @@ public class Kelas {
 
 		int menu = 1;
 
-		while (menu != 3) {
+		while (menu != 2) {
 			System.out.println("1. Input");
-			System.out.println("2. View");
-			System.out.println("3. Exit");
+			System.out.println("2. Exit");
 			System.out.print("Input : ");
 
 			Scanner scan = new Scanner(System.in);
@@ -63,8 +62,6 @@ public class Kelas {
 				userInput = scan.next();
 				inputMurid(userInput);
 			case 2:
-				// view murid
-			case 3:
 				break;
 			}
 			System.out.println("\n");
