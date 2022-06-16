@@ -12,7 +12,7 @@ public class Latihan_2 {
 	static List<String> murid = new ArrayList<>();
 
 	public static void keteranganKelas(String student) {
-		String keterangan = "Kamu akan duduk di (" + i + "," + j + ") : " + student;
+		String keterangan = "Kamu akan duduk di kelas (" + i + "," + j + ") : " + student;
 		daftarKelas.add(keterangan);
 		daftarKelas.forEach(x -> System.out.println(x));
 	}
