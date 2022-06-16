@@ -14,4 +14,20 @@ public class Restoran {
 		this.harga = harga;
 	}
 
+	public void setSpesial(boolean spesial) {
+		this.spesial = spesial;
+	}
+
+	public String getMenu() {
+		return menu;
+	}
+
+	public double getHarga() {
+		return harga;
+	}
+
+	public boolean isSpesial() {
+		return spesial;
+	}
+
 }
