@@ -25,4 +25,10 @@ public class PersegiPanjang implements BangunDatar {
 		float kalkulasi = 2 * (panjang + lebar);
 		System.out.println(res + kalkulasi);
 	}
+
+	@Override
+	public void getHasil() {
+		luas();
+		keliling();
+	}
 }

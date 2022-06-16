@@ -24,4 +24,10 @@ public class Persegi implements BangunDatar {
 		System.out.println(res + kalkulasi);
 	}
 
+	@Override
+	public void getHasil() {
+		luas();
+		keliling();
+	}
+
 }

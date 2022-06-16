@@ -3,13 +3,11 @@ package sesi_05;
 public class Segitiga implements BangunDatar {
 
 	private float alas;
-	private float sisi;
 	private float tinggi;
 
-	public Segitiga(float alas, float tinggi, float sisi) {
+	public Segitiga(float alas, float tinggi) {
 		this.tinggi = tinggi;
 		this.alas = alas;
-		this.sisi = sisi;
 	}
 
 	@Override
@@ -24,8 +22,13 @@ public class Segitiga implements BangunDatar {
 	public void keliling() {
 		// TODO Auto-generated method stub
 		String res = "Keliling segitiga : ";
-		float kalkulasi = sisi * 3;
+		float kalkulasi = alas * 3;
 		System.out.println(res + kalkulasi);
 	}
 
+	@Override
+	public void getHasil() {
+		luas();
+		keliling();
+	}
 }
