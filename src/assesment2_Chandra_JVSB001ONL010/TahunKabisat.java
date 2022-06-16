@@ -22,7 +22,7 @@ public class TahunKabisat {
 				continue;
 			}
 
-			if (s.length() > 2022) {
+			if (tahun > 2022) {
 				System.out.println("Maksimal tahun 2022");
 				continue;
 			}
