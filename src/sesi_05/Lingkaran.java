@@ -2,8 +2,8 @@ package sesi_05;
 
 public class Lingkaran implements BangunDatar {
 
-	final static float PI = 3.14f;
-	float r;
+	private final static float PI = 3.14f;
+	private float r;
 
 	public Lingkaran(float r) {
 		this.r = r;

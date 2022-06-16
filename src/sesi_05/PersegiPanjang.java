@@ -2,8 +2,8 @@ package sesi_05;
 
 public class PersegiPanjang implements BangunDatar {
 
-	float lebar;
-	float panjang;
+	private float lebar;
+	private float panjang;
 
 	public PersegiPanjang(float panjang, float lebar) {
 		this.panjang = panjang;

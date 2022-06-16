@@ -2,7 +2,7 @@ package sesi_05;
 
 public class Persegi implements BangunDatar {
 
-	int sisi;
+	private int sisi;
 
 	public Persegi(int sisi) {
 		this.sisi = sisi;

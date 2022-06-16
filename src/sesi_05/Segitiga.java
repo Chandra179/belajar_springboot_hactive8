@@ -2,9 +2,9 @@ package sesi_05;
 
 public class Segitiga implements BangunDatar {
 
-	float alas;
-	float sisi;
-	float tinggi;
+	private float alas;
+	private float sisi;
+	private float tinggi;
 
 	public Segitiga(float alas, float tinggi, float sisi) {
 		this.tinggi = tinggi;
