@@ -36,8 +36,7 @@ public class BinaryTree {
 		}
 		if (value < node.value) {
 			node.left = insert(node.left, value);
-		}
-		else if (value > node.value) {
+		} else if (value > node.value) {
 			node.right = insert(node.right, value);
 		}
 		return node;
