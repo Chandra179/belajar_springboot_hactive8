@@ -11,24 +11,12 @@ public class Segitiga implements BangunDatar {
 	}
 
 	@Override
-	public void luas() {
-		// TODO Auto-generated method stub
-		String res = "Luas segitiga : ";
-		float kalkulasi = 0.5f * alas * tinggi;
-		System.out.println(res + kalkulasi);
+	public float luas() {
+		return 0.5f * alas * tinggi;
 	}
 
 	@Override
-	public void keliling() {
-		// TODO Auto-generated method stub
-		String res = "Keliling segitiga : ";
-		float kalkulasi = alas * 3;
-		System.out.println(res + kalkulasi);
-	}
-
-	@Override
-	public void getHasil() {
-		luas();
-		keliling();
+	public float keliling() {
+		return alas * 3;
 	}
 }

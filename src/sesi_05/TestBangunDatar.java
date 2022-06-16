@@ -4,7 +4,9 @@ public class TestBangunDatar {
 
 	public static void ringkasanBangunDatar(BangunDatar... listBangunDatar) {
 		for (BangunDatar i : listBangunDatar) {
-			i.getHasil();
+			String className = i.getClass().getSimpleName();
+			System.out.println("Luas " + className + ": " + i.luas());
+			System.out.println("Keliling  " + className + ": " + i.keliling());
 			System.out.println("\n");
 		}
 	}
@@ -18,5 +20,4 @@ public class TestBangunDatar {
 
 		ringkasanBangunDatar(persegi, lingkaran, persegiPanjang, segitiga);
 	}
-
 }

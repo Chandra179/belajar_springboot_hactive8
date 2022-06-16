@@ -11,24 +11,12 @@ public class PersegiPanjang implements BangunDatar {
 	}
 
 	@Override
-	public void luas() {
-		// TODO Auto-generated method stub
-		String res = "Luas PersegiPanjang : ";
-		float kalkulasi = panjang * lebar;
-		System.out.println(res + kalkulasi);
+	public float luas() {
+		return panjang * lebar;
 	}
 
 	@Override
-	public void keliling() {
-		// TODO Auto-generated method stub
-		String res = "Keliling PersegiPanjang : ";
-		float kalkulasi = 2 * (panjang + lebar);
-		System.out.println(res + kalkulasi);
-	}
-
-	@Override
-	public void getHasil() {
-		luas();
-		keliling();
+	public float keliling() {
+		return 2 * (panjang + lebar);
 	}
 }

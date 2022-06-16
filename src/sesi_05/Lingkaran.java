@@ -10,24 +10,12 @@ public class Lingkaran implements BangunDatar {
 	}
 
 	@Override
-	public void luas() {
-		// TODO Auto-generated method stub
-		String res = "Luas lingkaran : ";
-		float kalkulasi = PI * r;
-		System.out.println(res + kalkulasi);
+	public float luas() {
+		return PI * r;
 	}
 
 	@Override
-	public void keliling() {
-		// TODO Auto-generated method stub
-		String res = "Keliling lingkaran : ";
-		float kalkulasi = 2 * PI * r;
-		System.out.println(res + kalkulasi);
-	}
-
-	@Override
-	public void getHasil() {
-		luas();
-		keliling();
+	public float keliling() {
+		return 2 * PI * r;
 	}
 }
