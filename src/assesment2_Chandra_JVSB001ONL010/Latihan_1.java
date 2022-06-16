@@ -3,7 +3,7 @@ package assesment2_Chandra_JVSB001ONL010;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class BilBesarKecil {
+public class Latihan_1 {
 	public static void main(String[] args) {
 
 		final int x;

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Kelas {
+public class Latihan_2 {
 
 	static int i = 0;
 	static int j = 0;
@@ -21,14 +21,14 @@ public class Kelas {
 
 		murid.add(student);
 
-		System.out.println("====================================");
+		System.out.println("=====================================================");
 		for (int x = 0; x < murid.size(); x++) {
 			if (x != 0 && x % 3 == 0) {
 				System.out.println("");
 			}
 			System.out.print(String.format("| %s | %10s", murid.get(x), ""));
 		}
-		System.out.println("\n====================================");
+		System.out.println("\n=====================================================");
 	}
 
 	public static void inputMurid(String student) {

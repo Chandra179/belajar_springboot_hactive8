@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.Scanner;
 
-public class BeliBarang {
+public class Latihan_5 {
 
 	static DaftarBarang daftarBarang = new DaftarBarang();
 	static HashMap<Integer, Barang> detailBarang = daftarBarang.getDaftarBarang();
@@ -13,7 +13,7 @@ public class BeliBarang {
 
 	public static void ringkasanBelanja(HashMap<Integer, Integer> barangYangDibeli) {
 
-		System.out.println(String.format("%s %25s %20s %15s %15s %15s",
+		System.out.println(String.format("%s %25s %20s %15s %15s %20s",
 				"No |", 
 				"Nama Barang |", 
 				"Harga |", 
@@ -21,7 +21,7 @@ public class BeliBarang {
 				"Diskon |", 
 				"SubTotal |"));
 		System.out.println(String.format("%s",
-				"---------------------------------------------------------------------------------------------------"));
+				"-------------------------------------------------------------------------------------------------------"));
 
 		for (Entry<Integer, Integer> entry : barangYangDibeli.entrySet()) {
 			int kode = entry.getKey();
@@ -36,8 +36,8 @@ public class BeliBarang {
 				double subTotal = harga - (harga * (diskon / 100));
 				String subTotalCurrency = formatter.format(subTotal);
 
-				System.out.println(String.format("%s %25s %20s %15s %15s %15s%n",
-						kode, nama, harga, qty, diskon, subTotalCurrency));
+				System.out.println(String.format("%s %25s %20s %15s %15s %20s%n",
+						kode, nama, harga, qty, (diskon+"%"), subTotalCurrency));
 			}
 
 		}
@@ -49,16 +49,23 @@ public class BeliBarang {
 		HashMap<Integer, Integer> barangYangDibeli = new HashMap<>();
 
 		int jumlahBeli = 0;
-		int i = 0;
+		int i = 1;
 		Scanner scan = new Scanner(System.in);
 
 		System.out.print("Masukan jumlah beli : ");
 		jumlahBeli = scan.nextInt();
 
-		while (i < jumlahBeli) {
+		while (i <= jumlahBeli) {
 			System.out.format("Masukan Kode Barang ke-%d :", i);
 			int kodeBarang = scan.nextInt();
-			
+
+			// Jika barang sudah dibeli
+			if (barangYangDibeli.containsKey(kodeBarang)) {
+				System.out.println("Barang sudah dibeli!");
+				continue;
+			}
+
+			// Jika barang tidak ada
 			if (!detailBarang.containsKey(kodeBarang)) {
 				System.out.println("Barang tidak ada!");
 				continue;

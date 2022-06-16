@@ -3,12 +3,13 @@ package assesment2_Chandra_JVSB001ONL010;
 import java.time.Year;
 import java.util.Scanner;
 
-public class TahunKabisat {
+public class Latihan_4 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int tahun = 1;
 
+		System.out.println("Press 0 untuk keluar");
 		while (tahun != 0) {
 
 			Scanner scan = new Scanner(System.in);

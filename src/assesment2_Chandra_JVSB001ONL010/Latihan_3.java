@@ -3,7 +3,7 @@ package assesment2_Chandra_JVSB001ONL010;
 import java.text.NumberFormat;
 import java.util.Scanner;
 
-public class DiskonDanBayar {
+public class Latihan_3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -13,7 +13,7 @@ public class DiskonDanBayar {
 
 		NumberFormat formatter = NumberFormat.getCurrencyInstance();
 
-		System.out.print("Press 0 untuk Exit Program");
+		System.out.print("Press 0 untuk Exit Program\n");
 		while (pembelian != 0) {
 			System.out.print("Input pembelian : ");
 			pembelian = scan.nextDouble();
