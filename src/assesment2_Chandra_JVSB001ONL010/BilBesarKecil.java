@@ -30,7 +30,7 @@ public class BilBesarKecil {
 
 		System.out.println("Rata-ratanya adalah : " + rataRata);
 		System.out.format("%d adalah bilangan terkecil\n", bilanganTerkecil);
-		System.out.format("%d adalah bilangan terbesar\n", bilanganTerbesar);
+		System.out.format("%d adalah bilangan terbesar", bilanganTerbesar);
 
 	}
 }
