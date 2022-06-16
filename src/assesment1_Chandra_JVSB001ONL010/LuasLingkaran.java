@@ -1,8 +1,8 @@
-package sesi_03;
+package assesment1_Chandra_JVSB001ONL010;
 
 import java.util.Scanner;
 
-public class Assignment1 {
+public class LuasLingkaran {
 	public static void main(String[] args) {
 		final double PI = 3.14;
 		double Luas;

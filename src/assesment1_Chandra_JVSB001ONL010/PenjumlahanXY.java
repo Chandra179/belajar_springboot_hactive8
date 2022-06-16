@@ -1,6 +1,6 @@
-package sesi_03;
+package assesment1_Chandra_JVSB001ONL010;
 
-public class Assignment5 {
+public class PenjumlahanXY {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -22,11 +22,9 @@ public class Assignment5 {
 		// A
 		X1 = y1 + y2 * (y1 + y2);
 		X2 = y1 / 4 & y2;
-
-		// B
-		System.out.println(X1 >= X2);
-		System.out.println(X2 >= X1);
-		System.out.println(X1 % 4 == ++X2 % 5);
+		
+		System.out.println(X1);
+		System.out.println(X2);
 	}
 
 }

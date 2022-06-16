@@ -1,6 +1,6 @@
-package sesi_03;
+package assesment1_Chandra_JVSB001ONL010;
 
-public class Assignment2 {
+public class Aritmatika {
 	public static void main(String[] args) {
 		int a = 12;
 		int b = 8;
@@ -13,6 +13,7 @@ public class Assignment2 {
 		int hasil5 = (a + b) * c;
 		int hasil6 = (a - b) * c;
 
+		// Semua baris ter print
 		System.out.println(hasil1);
 		System.out.println(hasil2);
 		System.out.println(hasil3);
