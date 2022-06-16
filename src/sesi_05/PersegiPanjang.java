@@ -14,13 +14,15 @@ public class PersegiPanjang implements BangunDatar {
 	public void luas() {
 		// TODO Auto-generated method stub
 		String res = "Luas PersegiPanjang : ";
-		System.out.println(res + (panjang * lebar));
+		float kalkulasi = panjang * lebar;
+		System.out.println(res + kalkulasi);
 	}
 
 	@Override
 	public void keliling() {
 		// TODO Auto-generated method stub
 		String res = "Keliling PersegiPanjang : ";
-		System.out.println(res + (2 * (panjang + lebar)));
+		float kalkulasi = 2 * (panjang + lebar);
+		System.out.println(res + kalkulasi);
 	}
 }

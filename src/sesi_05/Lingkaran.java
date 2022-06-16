@@ -13,14 +13,16 @@ public class Lingkaran implements BangunDatar {
 	public void luas() {
 		// TODO Auto-generated method stub
 		String res = "Luas lingkaran : ";
-		System.out.println(res + (PI * r));
+		float kalkulasi = PI * r;
+		System.out.println(res + kalkulasi);
 	}
 
 	@Override
 	public void keliling() {
 		// TODO Auto-generated method stub
 		String res = "Keliling lingkaran : ";
-		System.out.println(res + (2 * PI * r));
+		float kalkulasi = 2 * PI * r;
+		System.out.println(res + kalkulasi);
 	}
 
 }

@@ -12,14 +12,16 @@ public class Persegi implements BangunDatar {
 	public void luas() {
 		// TODO Auto-generated method stub
 		String res = "Luas Persegi : ";
-		System.out.println(res + (sisi * sisi));
+		float kalkulasi = sisi * sisi;
+		System.out.println(res + kalkulasi);
 	}
 
 	@Override
 	public void keliling() {
 		// TODO Auto-generated method stub
 		String res = "Keliling Persegi : ";
-		System.out.println(res + (4 * sisi));
+		float kalkulasi = 4 * sisi;
+		System.out.println(res + kalkulasi);
 	}
 
 }

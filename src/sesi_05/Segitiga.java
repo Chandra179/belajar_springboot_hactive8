@@ -16,14 +16,16 @@ public class Segitiga implements BangunDatar {
 	public void luas() {
 		// TODO Auto-generated method stub
 		String res = "Luas segitiga : ";
-		System.out.println(res + (0.5f * alas * tinggi));
+		float kalkulasi = 0.5f * alas * tinggi;
+		System.out.println(res + kalkulasi);
 	}
 
 	@Override
 	public void keliling() {
 		// TODO Auto-generated method stub
 		String res = "Keliling segitiga : ";
-		System.out.println(res + (sisi * 3));
+		float kalkulasi = sisi * 3;
+		System.out.println(res + kalkulasi);
 	}
 
 }
