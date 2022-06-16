@@ -22,7 +22,7 @@ public class PenjumlahanXY {
 		// A
 		X1 = y1 + y2 * (y1 + y2);
 		X2 = y1 / 4 & y2;
-		
+
 		System.out.println(X1);
 		System.out.println(X2);
 	}
