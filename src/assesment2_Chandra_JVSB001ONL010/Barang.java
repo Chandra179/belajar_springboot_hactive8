@@ -4,7 +4,7 @@ public class Barang {
 
 	private String nama;
 	private double harga;
-	private double diskon = 1;
+	private double diskon = 0;
 	private int kode;
 
 	public Barang(int kode, String nama, double harga, double diskon) {
