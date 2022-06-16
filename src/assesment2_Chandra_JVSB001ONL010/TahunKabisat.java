@@ -15,6 +15,10 @@ public class TahunKabisat {
 			System.out.print("Input tahun: ");
 			tahun = scan.nextInt();
 
+			if (tahun == 0) {
+				break;
+			}
+
 			String s = Integer.toString(tahun);
 
 			if (s.length() < 4) {
