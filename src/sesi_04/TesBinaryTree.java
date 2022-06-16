@@ -35,9 +35,7 @@ public class TesBinaryTree {
 		root = insert(root, i);
 	}
 
-	// node value node==null value<node node>value
-	// -------------------------------------------------------------------------------
-	// null 34 Node(34) - -
+	// null 34 Node(34)
 
 	// 34 56 - - 56>34
 	// 34.right = null 56
