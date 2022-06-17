@@ -7,7 +7,7 @@ public class Barang {
 	static NumberFormat formatter = NumberFormat.getCurrencyInstance();
 	private String nama;
 	private double harga;
-	private int diskon = 0;
+	private double diskon = 0;
 	private int kode;
 
 	public Barang(int kode, String nama, double harga, int diskon) {
@@ -21,6 +21,7 @@ public class Barang {
 		this.nama = nama;
 		this.harga = harga;
 		this.kode = kode;
+		this.diskon = 0;
 	}
 
 	public String getNama() {
@@ -40,12 +41,13 @@ public class Barang {
 	}
 
 	public String getDiskonInPersen() {
-		String diksonInPersen = (diskon != 0 ? (diskon + "%") : "-");
-		return diksonInPersen;
+		return diskon != 0 ? (diskon + "%") : "-";
 	}
 
-	public String getSubtotal() {
-		double subTotal = harga - (harga * (diskon / 100));
+	public String getSubtotal(int qty) {
+		double totalHarga = qty * harga;
+		double diskonYangDidapat = totalHarga * (diskon / 100);
+		double subTotal = totalHarga - diskonYangDidapat;
 		String total = formatter.format(subTotal); // currency format
 		return total;
 	}

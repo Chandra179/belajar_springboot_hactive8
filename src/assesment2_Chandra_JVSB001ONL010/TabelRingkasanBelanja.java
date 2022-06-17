@@ -29,7 +29,7 @@ public class TabelRingkasanBelanja {
 				String nama = barang.getNama();
 				double harga = barang.getHarga();
 				String diskon = barang.getDiskonInPersen();
-				String subTotal = barang.getSubtotal();
+				String subTotal = barang.getSubtotal(qty);
 
 				System.out.println(
 						String.format("%s %32s %20s %15s %15s %24s%n", kode, nama, harga, qty, diskon, subTotal));
