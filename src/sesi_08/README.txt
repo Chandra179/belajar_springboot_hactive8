@@ -25,10 +25,11 @@ Parallel
    essentially. In single-core CPU, you may get concurrency but NOT parallelism. 
    Parallelism is a specific kind of concurrency where tasks are really executed simultaneously.
    
-   
+-  Synchronization -> fitur yang digunakan untuk memaksa kode program hanya boleh diakses oleh satu thread saja  
+
  ================================
- 
- 
+
+
 1. aplikasi bisa concurrent — tetapi tidak parallel,
    dalam artian bisa memproses 1 task atau lebih secara bersamaan, tetapi tidak mengeksekusi 2 task secara bersamaan
 

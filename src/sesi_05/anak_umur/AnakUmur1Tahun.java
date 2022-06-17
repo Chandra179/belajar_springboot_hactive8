@@ -1,4 +1,4 @@
-package sesi_05;
+package sesi_05.anak_umur;
 
 public class AnakUmur1Tahun extends Induk implements InterfaceAnakUmur1Tahun {
 

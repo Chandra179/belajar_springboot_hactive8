@@ -3,14 +3,16 @@ package sesi_08;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ThreadHello implements Runnable {
+import org.junit.jupiter.api.Test;
 
+public class ThreadWorld extends Thread{
+	
 	private final String name;
-
-	public ThreadHello(String name) {
+	
+	public ThreadWorld(String name) {
 		this.name = name;
 	}
-
+	
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
@@ -21,5 +23,4 @@ public class ThreadHello implements Runnable {
 			Logger.getLogger(ThreadHello.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
-
 }

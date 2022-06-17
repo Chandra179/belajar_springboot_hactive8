@@ -2,7 +2,6 @@ package sesi_05;
 
 abstract class Manusia {
 	protected abstract void nyanyiLagu();
-
 }
 
 class Cowok extends Manusia {

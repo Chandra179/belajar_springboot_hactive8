@@ -1,4 +1,4 @@
-package sesi_05;
+package sesi_05.bangun_datar;
 
 public class TestBangunDatar {
 
