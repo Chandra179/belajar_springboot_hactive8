@@ -62,7 +62,6 @@ public class SelectionSort {
 		// inisialisasi array dengan size yang diinput
 		int[] data = new int[arraySize];
 
-		// input nilai
 		for (int i = 0; i < arraySize; i++) {
 			System.out.print("Input nilai data ke-" + (i + 1) + " : ");
 			data[i] = scan.nextInt(); // populate data
@@ -71,12 +70,12 @@ public class SelectionSort {
 		SelectionSort ob = new SelectionSort();
 
 		// sebelum sort
-		System.out.println("Unsorted array");
+		System.out.println("\nUnsorted array");
 		ob.printArray(data);
 
 		// setelah sort
 		ob.sort(data);
-		System.out.println("Sorted array");
+		System.out.println("\nSorted array");
 		ob.printArray(data);
     }
 }

@@ -26,7 +26,9 @@ public class Latihan_2 {
 			if (x != 0 && x % 3 == 0) {
 				System.out.println("");
 			}
-			System.out.print(String.format("| %s | %10s", murid.get(x), ""));
+			// int tes = murid.get(x).length();
+			// int tes2 = 20 - tes;
+			System.out.print(String.format("| %s | %20s", murid.get(x), ""));
 		}
 		System.out.println("\n=====================================================");
 	}
