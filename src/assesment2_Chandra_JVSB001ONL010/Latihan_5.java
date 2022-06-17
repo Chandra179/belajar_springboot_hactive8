@@ -1,46 +1,26 @@
 package assesment2_Chandra_JVSB001ONL010;
 
-import java.text.NumberFormat;
 import java.util.HashMap;
-import java.util.Map.Entry;
 import java.util.Scanner;
 
 public class Latihan_5 {
 
 	static DaftarBarang daftarBarang = new DaftarBarang();
 	static HashMap<Integer, Barang> detailBarang = daftarBarang.getDaftarBarang();
-	static NumberFormat formatter = NumberFormat.getCurrencyInstance();
+	static Scanner scan = new Scanner(System.in);
 
+	// Daftar barang
+	public static void tampilkanBarang() {
+		TabelDaftarBelanja.header();
+		TabelDaftarBelanja.body(detailBarang);
+		TabelDaftarBelanja.footer();
+	}
+
+	// Ringkasan pembelian
 	public static void ringkasanBelanja(HashMap<Integer, Integer> barangYangDibeli) {
-
-		System.out.println(String.format("%s %25s %20s %15s %15s %20s",
-				"No |", 
-				"Nama Barang |", 
-				"Harga |", 
-				"QTY |", 
-				"Diskon |", 
-				"SubTotal |"));
-		System.out.println(String.format("%s",
-				"-------------------------------------------------------------------------------------------------------"));
-
-		for (Entry<Integer, Integer> entry : barangYangDibeli.entrySet()) {
-			int kode = entry.getKey();
-			int qty = entry.getValue();
-
-			if (detailBarang.containsKey(kode)) {
-				Barang barang = detailBarang.get(kode);
-				String nama = barang.getNama();
-				double harga = barang.getHarga();
-				double diskon = barang.getDiskon();
-
-				double subTotal = harga - (harga * (diskon / 100));
-				String subTotalCurrency = formatter.format(subTotal);
-
-				System.out.println(String.format("%s %25s %20s %15s %15s %20s%n",
-						kode, nama, harga, qty, (diskon+"%"), subTotalCurrency));
-			}
-
-		}
+		TabelRingkasanBelanja.header();
+		TabelRingkasanBelanja.body(detailBarang, barangYangDibeli);
+		TabelRingkasanBelanja.footer();
 	}
 
 	public static void main(String[] args) {
@@ -50,10 +30,23 @@ public class Latihan_5 {
 
 		int jumlahBeli = 0;
 		int i = 1;
-		Scanner scan = new Scanner(System.in);
 
+
+		// DAFTAR BARANG
+		tampilkanBarang();
+
+
+		// INPUT KODE BARANG
 		System.out.print("Masukan jumlah beli : ");
 		jumlahBeli = scan.nextInt();
+
+
+		// jika pembelian lebih dari item maka input ulang
+		if (jumlahBeli > detailBarang.size()) {
+			System.out.println("Maksimal pembelian 5!");
+			System.out.print("Masukan jumlah beli : ");
+			jumlahBeli = scan.nextInt();
+		}
 
 		while (i <= jumlahBeli) {
 			System.out.format("Masukan Kode Barang ke-%d :", i);
@@ -71,6 +64,7 @@ public class Latihan_5 {
 				continue;
 			}
 
+			// input QTY
 			System.out.format("Masukan Qty ke-%d : ", i);
 			int qtyBarang = scan.nextInt();
 
