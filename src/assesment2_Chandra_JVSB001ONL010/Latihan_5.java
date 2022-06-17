@@ -30,13 +30,14 @@ public class Latihan_5 {
 
 		int jumlahBeli = 0;
 		int i = 1;
-
+		int qtyBarang = 0;
 
 		// DAFTAR BARANG
 		tampilkanBarang();
 
 
 		// INPUT KODE BARANG
+		System.out.println("Press 0 untuk exit program");
 		System.out.print("Masukan jumlah beli : ");
 		jumlahBeli = scan.nextInt();
 
@@ -53,6 +54,11 @@ public class Latihan_5 {
 			int kodeBarang = scan.nextInt();
 
 			// Jika barang sudah dibeli
+			if (jumlahBeli == 0) {
+				break;
+			}
+
+			// Jika barang sudah dibeli
 			if (barangYangDibeli.containsKey(kodeBarang)) {
 				System.out.println("Barang sudah dibeli!");
 				continue;
@@ -66,7 +72,13 @@ public class Latihan_5 {
 
 			// input QTY
 			System.out.format("Masukan Qty ke-%d : ", i);
-			int qtyBarang = scan.nextInt();
+			qtyBarang = scan.nextInt();
+
+			if (qtyBarang < 1) {
+				System.out.println("Barang minimal 1");
+				System.out.format("Masukan Qty ke-%d : ", i);
+				qtyBarang = scan.nextInt();
+			}
 
 			// Simpan pembelian
 			barangYangDibeli.put(kodeBarang, qtyBarang);

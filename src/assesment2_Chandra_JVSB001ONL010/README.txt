@@ -1,3 +1,12 @@
+ROOT CLASS UNTUK RUN PROGRAM
+--------------------------------------
+Latihan_1
+Latihan_2
+Latihan_3
+Latihan_4
+Latihan_5
+
+---------------------------------------
 Stream            -> aliran data
 String.format     -> digunakan untuk penambahan format-format tertentu pada string, 
  		     contoh : %10s spasi 10x untuk format string
