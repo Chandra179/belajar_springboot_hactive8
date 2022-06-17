@@ -12,7 +12,7 @@ XML Parsing (extensible markup language)
 SAXParserFactory --------------------> SAXParser 
 										   |
 										   |
-										   |  wrapdds
+										   |  wraps
 										   |
 										   V
 							     Interface for reading 
@@ -24,3 +24,11 @@ SAXParserFactory --------------------> SAXParser
 SAXParserFactory
 - digunakan untuk konfigurasi/obtain SAX based parser 
   to parse XML documents.
+  
+Logger
+- Logging message
+- Level -> standard logging level
+- SEVERE -> message yg menandakan serious failure
+- getMessage -> detail error message
+
+

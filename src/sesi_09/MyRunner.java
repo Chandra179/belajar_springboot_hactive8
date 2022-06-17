@@ -1,6 +1,7 @@
 package sesi_09;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.logging.Level;
@@ -35,7 +36,12 @@ public class MyRunner {
 		
 		try {
 			SAXParser parser = createSaxParser();
-			
+			parser.parse(xmlDocument, handler);
+		} catch (SAXException | IOException ex) {
+			Logger lgr = Logger.getLogger(MyRunner.class.getName());
+			lgr.log(Level.SEVERE, ex.getMessage(), ex);
 		}
+		
+		return handler.getUsers();
 	}
 }
