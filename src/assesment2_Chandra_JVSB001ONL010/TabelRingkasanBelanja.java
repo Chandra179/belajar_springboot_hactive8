@@ -27,7 +27,7 @@ public class TabelRingkasanBelanja {
 			if (detailBarang.containsKey(kode)) {
 				Barang barang = detailBarang.get(kode);
 				String nama = barang.getNama();
-				double harga = barang.getHarga();
+				String harga = barang.getHarga();
 				String diskon = barang.getDiskonInPersen();
 				String subTotal = barang.getSubtotal(qty);
 

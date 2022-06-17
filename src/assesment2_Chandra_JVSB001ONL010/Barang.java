@@ -28,8 +28,8 @@ public class Barang {
 		return nama;
 	}
 
-	public double getHarga() {
-		return harga;
+	public String getHarga() {
+		return formatter.format(harga);
 	}
 
 	public double getDiskon() {

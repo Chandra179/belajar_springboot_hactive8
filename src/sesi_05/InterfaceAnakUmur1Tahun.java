@@ -1,5 +1,7 @@
 package sesi_05;
 
 public interface InterfaceAnakUmur1Tahun {
-	AnakUmur1Tahun anakSiapa();
+	void anakSiapa();
+
+	void hobiAnak();
 }

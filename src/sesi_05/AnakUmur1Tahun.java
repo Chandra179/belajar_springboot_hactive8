@@ -3,9 +3,15 @@ package sesi_05;
 public class AnakUmur1Tahun extends Induk implements InterfaceAnakUmur1Tahun {
 
 	@Override
-	public AnakUmur1Tahun anakSiapa() {
+	public void anakSiapa() {
 		// TODO Auto-generated method stub
-		return null;
+		System.out.println("Nama anaknya adalah : " + namaAnak);
+	}
+
+	@Override
+	public void hobiAnak() {
+		// TODO Auto-generated method stub
+		System.out.println("Hobi anaknya adalah : " + hobiAnak);
 	}
 
 }
