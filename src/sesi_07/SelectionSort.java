@@ -17,21 +17,24 @@ public class SelectionSort {
 
 			System.out.println("\n------------\n");
 
-			// ambil nilai minimum dalam array
 			int min_idx = i;
 
-			// cth: 5 4 3 9
 			for (int j = i + 1; j < n; j++) {
 				if (data[j] < data[min_idx]) {
 					System.out.print(data[j] + "<" + data[min_idx] + "\n");
 					min_idx = j;
+					System.out.println(min_idx);
 				}
 			}
-			// tukar nilai minimum dengan nilai element pertama
+
 			int temp = data[min_idx];
 			data[min_idx] = data[i];
 			data[i] = temp;
 			System.out.print(data[i] + " " + data[min_idx]);
+
+			for (int i1 = 0; i1 < n; ++i1)
+				System.out.print(data[i1] + " ");
+			System.out.println();
         }
     }
  
