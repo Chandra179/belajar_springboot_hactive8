@@ -1,45 +1,80 @@
 package sesi_07;
 
+import java.util.Scanner;
+
 public class SelectionSort {
-	void sort(int arr[]) {
-        int n = arr.length;
+	void sort(int data[]) {
+		int n = data.length; // 5
  
-        // One by one move boundary of unsorted subarray
+		/**
+		 * untuk melakukan sorting, simpan nilai minimum dalam array set nilai minimum
+		 * pada index 0 lakukan loop untuk melakukan perbandingan nilai minimum dengan
+		 * setiap nilai yang di loop jika nilai loop lebih kecil dari nilai minimum
+		 * sekarang maka lakukan swap nilai
+		 */
+
 		for (int i = 0; i < n - 1; i++) {
-            // Find the minimum element in unsorted array
-            int min_idx = i;
-            for (int j = i+1; j < n; j++)
-                if (arr[j] < arr[min_idx])
-                    min_idx = j;
- 
-            // Swap the found minimum element with the first
-            // element
-            int temp = arr[min_idx];
-            arr[min_idx] = arr[i];
-            arr[i] = temp;
+
+			System.out.println("\n------------\n");
+
+			// ambil nilai minimum dalam array
+			int min_idx = i;
+
+			// cth: 5 4 3 9
+			for (int j = i + 1; j < n; j++) {
+				if (data[j] < data[min_idx]) {
+					System.out.print(data[j] + "<" + data[min_idx] + "\n");
+					min_idx = j;
+				}
+			}
+			// tukar nilai minimum dengan nilai element pertama
+			int temp = data[min_idx];
+			data[min_idx] = data[i];
+			data[i] = temp;
+			System.out.print(data[i] + " " + data[min_idx]);
         }
     }
  
-    // Prints the array
-	void printArray(int arr[]) {
-        int n = arr.length;
+	void printArray(int data[]) {
+		int n = data.length;
         for (int i=0; i<n; ++i)
-            System.out.print(arr[i]+" ");
+			System.out.print(data[i] + " ");
         System.out.println();
     }
  
-    // Driver code to test above
 	public static void main(String args[]) {
-		// TODO
-		// 1. input array size
-		// loop size untuk input
-		// ta
 
-        SelectionSort ob = new SelectionSort();
-        int arr[] = {64,25,12,22,11};
-        ob.sort(arr);
-        System.out.println("Sorted array");
-        ob.printArray(arr);
+		/**
+		 * input array size loop size untuk input angka -> input tampilkan data sblm
+		 * sorting proses selection sort tampilkan data stlh sorting
+		 */
+
+		Scanner scan = new Scanner(System.in);
+
+		// input array size
+		int arraySize = 0;
+		System.out.print("Jumlah size : ");
+		arraySize = scan.nextInt();
+
+		// inisialisasi array dengan size yang diinput
+		int[] data = new int[arraySize];
+
+		// input nilai
+		for (int i = 0; i < arraySize; i++) {
+			System.out.print("Input nilai data ke-" + (i + 1) + " : ");
+			data[i] = scan.nextInt(); // populate data
+		}
+
+		SelectionSort ob = new SelectionSort();
+
+		// sebelum sort
+		System.out.println("Unsorted array");
+		ob.printArray(data);
+
+		// setelah sort
+		ob.sort(data);
+		System.out.println("Sorted array");
+		ob.printArray(data);
     }
 }
 
