@@ -21,4 +21,22 @@ Parallel
    (because she sings better and you eat better). 
    So this time, the two tasks are really executed simultaneously, 
    and it’s called parallel.
+ - Parallelism membutuhkan hardware dengan multiple processing units, 
+   essentially. In single-core CPU, you may get concurrency but NOT parallelism. 
+   Parallelism is a specific kind of concurrency where tasks are really executed simultaneously.
    
+   
+ ================================
+ 
+ 
+1. aplikasi bisa concurrent — tetapi tidak parallel,
+   dalam artian bisa memproses 1 task atau lebih secara bersamaan, tetapi tidak mengeksekusi 2 task secara bersamaan
+
+2. aplikasi bisa parallel — tetapi tidak concurrent, 
+   dalam artian bisa memproses multiple sub-tasks of a task in multi-core CPU at the same time.
+
+3. aplikasi bisa tidak parallel - bisa tidak concurrent juga
+   dalam artian memproses semua task secara sequential 1 per 1
+
+4. aplikasi bisa prallel - bisa concurrent
+   dalam artian memproses multiple task secara conccurent dalam multi core CPU secara bersamaan
