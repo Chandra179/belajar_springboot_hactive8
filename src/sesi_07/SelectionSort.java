@@ -26,15 +26,10 @@ public class SelectionSort {
 					System.out.println(min_idx);
 				}
 			}
-
 			int temp = data[min_idx];
 			data[min_idx] = data[i];
 			data[i] = temp;
 			System.out.print(data[i] + " " + data[min_idx]);
-
-			for (int i1 = 0; i1 < n; ++i1)
-				System.out.print(data[i1] + " ");
-			System.out.println();
         }
     }
  
