@@ -6,20 +6,20 @@ XML Parsing (extensible markup language)
 - StringBuilder : mutable string.membuat, modifikasi, replace string, dll
 				  biasanya digunakan ketika perlu banyak modifikasi pada string
 
------------------------
+------------------------------------------------------------------
 
                   konfigurasi/membuat
 SAXParserFactory --------------------> SAXParser 
 										   |
 										   |
-										   |  wraps
+										   |  wrapdds
 										   |
 										   V
 							     Interface for reading 
 							        an XML document 
 									using callbacks
 
------------------------
+------------------------------------------------------------------
 
 SAXParserFactory
 - digunakan untuk konfigurasi/obtain SAX based parser 
