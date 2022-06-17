@@ -53,7 +53,7 @@ public class Latihan_5 {
 			System.out.format("Masukan Kode Barang ke-%d :", i);
 			int kodeBarang = scan.nextInt();
 
-			// Jika barang sudah dibeli
+			// 0 exit
 			if (jumlahBeli == 0) {
 				break;
 			}
