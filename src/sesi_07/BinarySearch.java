@@ -3,10 +3,14 @@ package sesi_07;
 import java.util.Scanner;
 
 class BinarySearch {
-	// Returns index of x if it is present in arr[l..
-	// r], else return -1
 	 public static void binarySearch(int arr[], int first, int last, int key){  
 		   int mid = (first + last)/2;  
+			// 1 2 3 4 5 6 7 8 9 10
+			// mid 5
+			// 5 < 10
+			// 6 7 8 9 10
+			// 6+10 / 2 = 8 mid 8
+
 		   while( first <= last ){  
 		      if ( arr[mid] < key ){  
 		        first = mid + 1;     
@@ -23,7 +27,6 @@ class BinarySearch {
 		   }  
 		 }  
 
-	// Driver method to test above
 	public static void main(String args[]) {
 
 		Scanner scan = new Scanner(System.in);
