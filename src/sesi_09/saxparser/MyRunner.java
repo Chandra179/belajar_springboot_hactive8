@@ -1,4 +1,4 @@
-package sesi_09;
+package sesi_09.saxparser;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,7 +15,7 @@ import org.xml.sax.SAXException;
 
 public class MyRunner {
 	
-	private SAXParser createSaxParser() throws ParserConfigurationException {
+	public static SAXParser createSaxParser() throws ParserConfigurationException {
 		SAXParser saxParser = null;
 		
 		try {
@@ -27,21 +27,5 @@ public class MyRunner {
 		}
 		
 		return saxParser;
-	}
-	
-	public List<User> parseUsers() {
-		MyHandler handler = new MyHandler();
-		String fileName = "src/resources/users.xml";
-		File xmlDocument = Paths.get(fileName).toFile();
-		
-		try {
-			SAXParser parser = createSaxParser();
-			parser.parse(xmlDocument, handler);
-		} catch (SAXException | IOException ex) {
-			Logger lgr = Logger.getLogger(MyRunner.class.getName());
-			lgr.log(Level.SEVERE, ex.getMessage(), ex);
-		}
-		
-		return handler.getUsers();
 	}
 }
