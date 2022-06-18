@@ -1,4 +1,4 @@
-package sesi_09;
+package sesi_09.latihan_xml;
 
 import java.io.File;
 import java.io.IOException;

@@ -31,4 +31,20 @@ Logger
 - SEVERE -> message yg menandakan serious failure
 - getMessage -> detail error message
 
+------------------------------------------------------------------
 
+<users>
+	<user id="1">
+		<id>26</id>
+		<name>Bryant</name>
+		<gender>Male</gender>
+		<role>Java Developer</role>
+	</user>
+</users>
+	
+DefaultHandler
+- import org.xml.sax.helpers.DefaultHandler;
+- sax event handler
+- startElement -> element pertama yang ditemukan <user>
+- character -> character data dalam element <id> <name> <gender> <role>
+- endElement -> element terakhir yang ditemukan </user>

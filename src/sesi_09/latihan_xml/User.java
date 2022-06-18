@@ -1,4 +1,4 @@
-package sesi_09;
+package sesi_09.latihan_xml;
 
 public class User {
 	
