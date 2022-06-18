@@ -20,10 +20,10 @@ public class ReadXmlAlexaApi {
 		// Factory API untuk DOM parser
 		private final DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		
-		private static void main (String[] args) {
+		public static void main (String[] args) {
 			
 			ReadXmlAlexaApi obj = new ReadXmlAlexaApi();
-			int alexaRanking = obj.getAlexaRanking("bcafinance.co.id");
+			int alexaRanking = obj.getALexaRanking("bcafinance.co.id");
 			
 			System.out.println("Ranking: " + alexaRanking);
 		}
@@ -49,9 +49,15 @@ public class ReadXmlAlexaApi {
 					NodeList nodeList = element.getElementsByTagName("POPULARITY");
 					if (nodeList.getLength() > 0) {
 						Element elementAttribute = (Element) nodeList.item(0);
-						String ranking = elementAttribute.getAtt
+						String ranking = elementAttribute.getAttribute("TEXT");
+						if(!"".equals(ranking)) {
+							result = Integer.parseInt(ranking);
+						}
 					}
-				}
+				} 
+			} catch(Exception e) {
+				e.printStackTrace();
+				throw new IllegalArgumentException("Invalid request for domain : " + domain);
 			}
 			return result;
 		}
