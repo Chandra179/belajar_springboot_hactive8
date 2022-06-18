@@ -7,7 +7,9 @@ public class OperatorEquals {
 		String x = new String("Test");
 		String y = new String("Test");
 
+
 		String sameX = x;
+		
 
 		boolean hasil1 = x == y;
 		boolean hasil2 = x.equals(y);

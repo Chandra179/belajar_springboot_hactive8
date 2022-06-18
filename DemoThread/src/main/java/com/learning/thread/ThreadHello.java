@@ -1,16 +1,16 @@
-package sesi_08;
+package com.learning.thread;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ThreadWorld extends Thread{
-	
+public class ThreadHello extends Thread {
+
 	private final String name;
-	
-	public ThreadWorld(String name) {
+
+	public ThreadHello(String name) {
 		this.name = name;
 	}
-	
+
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
