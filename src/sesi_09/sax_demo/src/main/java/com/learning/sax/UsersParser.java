@@ -12,8 +12,6 @@ import javax.xml.parsers.SAXParser;
 
 import org.xml.sax.SAXException;
 
-import sesi_09.saxparser.MyRunner;
-
 public class UsersParser {
 	
 	public List<User> parseUsers() throws ParserConfigurationException {
