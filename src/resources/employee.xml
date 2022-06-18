@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <employees>
 	<employee id="9">
-		<firstname>Dcotor</firstname>
+		<firstname>Doctor</firstname>
 		<lastname>Chopper</lastname>
 		<location>Wanokuni</location>
 	</employee>

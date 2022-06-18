@@ -36,11 +36,12 @@ public class ReadXmlAlexaApi {
 			try {
 				// URLConnection -> read/write resource from url
 				// new URL -> buat url dari string
-				// openConnection -> connection to remote object
+				// openConnection -> instance yang merepresentasikan connection to remote object
 				URLConnection conn = new URL(url).openConnection();
 				
-				// input stream of bytes that reads from this connection
+				// (input stream of bytes) that reads from this connection
 				try (InputStream is = conn.getInputStream()) {
+					System.out.println(is);
 					dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
 					DocumentBuilder dBuilder = dbf.newDocumentBuilder(); // DocumentBuilder -> API untuk DOM document
 					Document doc = dBuilder.parse(is);
