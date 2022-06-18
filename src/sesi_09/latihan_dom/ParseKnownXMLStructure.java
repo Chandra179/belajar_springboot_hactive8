@@ -26,7 +26,7 @@ public class ParseKnownXMLStructure {
 		DocumentBuilder builder = factory.newDocumentBuilder();
 		
 		// 2. Parse document
-		Document document = builder.parse(new File("resources\employee.xml"));
+		Document document = builder.parse(new File("src/resources/employee.xml"));
 		
 		// 3. Normalize XML structure
 		// child node == document element
@@ -50,8 +50,8 @@ public class ParseKnownXMLStructure {
 			if (node.getNodeType() == Node.ELEMENT_NODE) {
 				Element eElement = (Element) node;
 				System.out.println("Employee id : " + eElement.getAttribute("id"));
-				System.out.println("Employee id : " + eElement.getElementsByTagName("firstName").item(0).getTextContent());
-				System.out.println("Employee id : " + eElement.getElementsByTagName("lastName").item(0).getTextContent());
+				System.out.println("Employee id : " + eElement.getElementsByTagName("firstname").item(0).getTextContent());
+				System.out.println("Employee id : " + eElement.getElementsByTagName("lastname").item(0).getTextContent());
 				System.out.println("Employee id : " + eElement.getElementsByTagName("location").item(0).getTextContent());
 			}
 		}
