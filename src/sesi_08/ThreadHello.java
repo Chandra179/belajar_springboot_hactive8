@@ -21,5 +21,4 @@ public class ThreadHello implements Runnable {
 			Logger.getLogger(ThreadHello.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
-
 }

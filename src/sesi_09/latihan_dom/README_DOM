@@ -1,0 +1,12 @@
+DOM (Document Object Model)
+- xml processing
+   
+   
+    XML -------------------------
+		  		                | error handler, entitiy resolver
+		                        v 
+	document builder  ----> dom builder ---> dom tree ---> business logic
+	     factory         
+            
+ 
+ 

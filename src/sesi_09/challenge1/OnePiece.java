@@ -3,15 +3,15 @@ package sesi_09.challenge1;
 
 public class OnePiece {
 
-	private int Id;
+	private int id;
 	private String firstName;
 	private String lastName;
 	
 	public int getId() {
-		return Id;
+		return id;
 	}
 	public void setId(int id) {
-		Id = id;
+		this.id = id;
 	}
 	public String getFirstName() {
 		return firstName;
@@ -29,7 +29,7 @@ public class OnePiece {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("[").append(Id).append(":")
+		builder.append("[").append(id).append(":")
 		.append(firstName).append(":")
 		.append(lastName).append("]");
 		
