@@ -10,6 +10,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class ReadXmlAlexaApi {
@@ -39,15 +40,15 @@ public class ReadXmlAlexaApi {
 				// openConnection -> instance yang merepresentasikan connection to remote object
 				URLConnection conn = new URL(url).openConnection();
 				
-				// (input stream of bytes) that reads from this connection
+				// (stream of bytes) that reads from this connection
 				try (InputStream is = conn.getInputStream()) {
-					System.out.println(is);
 					dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
 					DocumentBuilder dBuilder = dbf.newDocumentBuilder(); // DocumentBuilder -> API untuk DOM document
-					Document doc = dBuilder.parse(is);
-					Element element = doc.getDocumentElement();
+					Document doc = dBuilder.parse(is); // parse document
+					Element element = doc.getDocumentElement(); // ambil child node
 					
 					NodeList nodeList = element.getElementsByTagName("POPULARITY");
+					
 					if (nodeList.getLength() > 0) {
 						Element elementAttribute = (Element) nodeList.item(0);
 						String ranking = elementAttribute.getAttribute("TEXT");
