@@ -48,8 +48,8 @@ DefaultHandler
 - xml processing
    
 ```               
-	document builder  ----> dom builder ---> dom tree ---> business logic
-	     factory         
+document builder  ----> dom builder ---> dom tree ---> business logic
+	factory         
 ```     
  
 1. Get builder
