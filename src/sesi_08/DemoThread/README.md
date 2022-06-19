@@ -1,4 +1,4 @@
-Concurrent
+# Concurrent
  - makan kue dan nyanyi secara bersamaan
  - There are two tasks executing concurrently,
    tetapi berjalan di 1-core CPU, 
@@ -8,7 +8,7 @@ Concurrent
    i.e Task-2 can start even before Task-1 gets completed. 
    It all depends on the system architecture.
    
-Parallel
+# Parallel
  - split tasks menjadi smaller sub-task yang bisa di proses secara parallel, 
    ex: menjalankan pada multiple CPU pada waktu yang sama
  - untuk menjalankan parallel, tidak harus ada dua task atau lebih,
@@ -27,7 +27,7 @@ Parallel
    
 -  Synchronization -> fitur yang digunakan untuk memaksa kode program hanya boleh diakses oleh satu thread saja  
 
- ================================
+---------------------------------------------------------------
 
 
 1. aplikasi bisa concurrent — tetapi tidak parallel,
