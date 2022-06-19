@@ -8,6 +8,7 @@
 
 ------------------------------------------------------------------
 
+```
                   konfigurasi/membuat
 SAXParserFactory --------------------> SAXParser 
 										   |
@@ -20,6 +21,7 @@ SAXParserFactory --------------------> SAXParser
 									using callbacks
 
 ------------------------------------------------------------------
+```
 
 SAXParserFactory
 - digunakan untuk konfigurasi/obtain SAX based parser 
@@ -32,7 +34,7 @@ Logger
 - getMessage -> detail error message
 
 ------------------------------------------------------------------
-
+```
 <users>
 	<user id="1">
 		<id>26</id>
@@ -41,6 +43,7 @@ Logger
 		<role>Java Developer</role>
 	</user>
 </users>
+```
 	
 DefaultHandler
 - import org.xml.sax.helpers.DefaultHandler;
@@ -53,13 +56,13 @@ DefaultHandler
 # DOM (Document Object Model)
 - xml processing
    
-   
+```
     XML -------------------------
 		  		                | error handler, entitiy resolver
 		                        v 
 	document builder  ----> dom builder ---> dom tree ---> business logic
 	     factory         
-            
+```     
  
 1. Get builder
 2. Parse Document
@@ -67,6 +70,7 @@ DefaultHandler
 
 --------------------------------------------------------------
 
+```
 <employees>
 	<employee id="9">
 		<firstname>Doctor</firstname>
@@ -74,6 +78,7 @@ DefaultHandler
 		<location>Wanokuni</location>
 	</employee>
 </employees>
+```
 
 NodeList -> collection of nodes
 getElementsByTagName -> return list of nodes (firstname, lastname, location)
