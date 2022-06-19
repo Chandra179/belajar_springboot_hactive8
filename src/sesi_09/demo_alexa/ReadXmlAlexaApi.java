@@ -47,8 +47,19 @@ public class ReadXmlAlexaApi {
 			return nodeList;
 		}
 		
+		public int getRanking(NodeList nodeList) {
+			if (nodeList.getLength() <= 0) {
+				return 0;
+			}
+
+			Element elementAttribute = (Element) nodeList.item(0);
+			String ranking = elementAttribute.getAttribute("TEXT");
+			int result = ranking.isEmpty() ? 0 : Integer.parseInt(ranking);
+			return result;
+		}
+		
 		// proses untuk mendapatkan ranking
-		public int getRanking(URLConnection conn) throws ParserConfigurationException, IOException, SAXException {
+		public int domProcessing(URLConnection conn) throws ParserConfigurationException, IOException, SAXException {
 			
 			int result = 0;
 			
@@ -56,14 +67,8 @@ public class ReadXmlAlexaApi {
 			try (InputStream is = conn.getInputStream()) {
 				
 				NodeList nodeList = getNodeList(is);
+				result = getRanking(nodeList);
 				
-				if (nodeList.getLength() > 0) {
-					Element elementAttribute = (Element) nodeList.item(0); //?
-					String ranking = elementAttribute.getAttribute("TEXT");
-					if(!"".equals(ranking)) {
-						result = Integer.parseInt(ranking);
-					}
-				}
 			} catch(Exception e) {
 				e.printStackTrace();
 				throw new IllegalArgumentException();
@@ -73,14 +78,14 @@ public class ReadXmlAlexaApi {
 		}
 		
 		// rankingProcessing -> proses pengambilan ranking
-		public int rankingProcessing (String domain){
+		public int dataProcessing (String domain){
 
 			int ranking = 0;
 			String url = ALEXA_API + domain;
 			
 			try {
 				URLConnection conn = new URL(url).openConnection();
-				ranking = getRanking(conn);
+				ranking = domProcessing(conn);
 				
 			} catch(Exception e) {
 				e.printStackTrace();
@@ -92,7 +97,7 @@ public class ReadXmlAlexaApi {
 		
 		public static void main (String[] args) {
 			ReadXmlAlexaApi obj = new ReadXmlAlexaApi();
-			int alexaRanking = obj.rankingProcessing("bcafinance.co.id");
+			int alexaRanking = obj.dataProcessing("bcafinance.co.id");
 			System.out.println("Ranking: " + alexaRanking);
 		}
 }
