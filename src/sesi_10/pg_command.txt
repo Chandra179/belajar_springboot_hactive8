@@ -45,6 +45,34 @@ CREATE TABLE IF NOT EXISTS tests
 
 ---------------------------------
 
-insert into pegawai values('chandra','male','17-02-2000','employee',32234,'manajer')
+insert into pegawai values
+	(1,'sanji','male','1992-10-14','lajang',32234,'chef'),
+	(2,'zoro','male','1992-04-13','menikah',23749,'cleaning service'),
+	(3,'chopper','male','1989-05-09','lajang',89764,'doctor'),
+	(4,'luffy','male','1990-03-05','lajang',29537,'ceo'),
+	(5,'nami','female','1989-01-02','lajang',12341,'branch manager'),
+	(6,'usop','male','1989-01-09','lajang',64528,'assistant manager'),
+	(7,'brook','male','1820-12-05','lajang',72348,'sales manager'),
+	(8,'franky','male','1999-09-13','lajang',12343,'technical architect'),
+	(9,'jinbe','male','1899-09-09','menikah',88773,'marketing manager'),
+	(10,'robin','female','2001-10-07','lajang',2342,'hrd manager');
+
+update pegawai set jabatan='cfo' where nama_pegawai='nami';
+
+-----------------------------------
+
+insert into menu values
+	(111,'es cendol','beverage',3000),
+	(112,'es buah','beverage',15000),
+	(113,'fish ball soup','western food',50000),
+	(114,'indomie','indonesian food',50000),
+	(115,'sirloin steak','western food',50000),
+	(116,'sushi','japannese food',50000),
+	(117,'nasi goreng','indonesian food',50000),
+	(118,'ketoprak','indonesian food',50000),
+	(119,'gado gado','indonesian food',50000),
+	(120,'mie ayam','indonesian food',50000);
+
+-----------------------------------
 
 https://stackoverflow.com/questions/35676149/adding-a-column-as-a-foreign-key-gives-error-column-referenced-in-foreign-key-co?answertab=scoredesc#tab-top
