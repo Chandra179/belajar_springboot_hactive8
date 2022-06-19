@@ -6,7 +6,6 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.junit.Test;
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
@@ -19,14 +18,16 @@ public class TestDomParser {
 		ParseKnownXMLStructure.domProcessing();
 	}
 	
+	public void testGetElements() throws SAXException, IOException, ParserConfigurationException {
+		Document document = ParseKnownXMLStructure.domProcessing();
+		NodeList elements = ParseKnownXMLStructure.getDocumentElements(document);
+		System.out.println(elements);
+	}
+	
+	@Test
 	public void testDisplayData() throws SAXException, IOException, ParserConfigurationException {
 		Document document = ParseKnownXMLStructure.domProcessing();
-		
-		Element root = document.getDocumentElement();
-		System.out.println(root.getNodeName());
-		
-		NodeList nList = document.getElementsByTagName("employee");
-		
-		ParseKnownXMLStructure.displayData(nList);
+		NodeList elements = ParseKnownXMLStructure.getDocumentElements(document);
+		ParseKnownXMLStructure.displayData(elements);
 	}
 }
