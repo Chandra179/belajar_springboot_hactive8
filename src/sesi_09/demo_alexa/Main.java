@@ -9,12 +9,9 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
 public class Main {
-	public static void main (String[] args) throws MalformedURLException, IOException, ParserConfigurationException, SAXException  {
-		
+	public static void main (String[] args) throws MalformedURLException, IOException, ParserConfigurationException, SAXException {
 		URLConnection conn = UrlProcessor.processingUrl("bcafinance.co.id");
- 	    
-		int ranking = RankProcessor.displayRank(conn);
- 	    
+		int ranking = RankProcessor.displayRank(conn); 	    
  	    System.out.println("Ranking: " + ranking);
 	}
 }

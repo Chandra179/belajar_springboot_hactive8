@@ -2,8 +2,6 @@ package sesi_09.demo_alexa;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.net.URLConnection;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -17,15 +15,19 @@ import org.xml.sax.SAXException;
 public class RankProcessor {
 	
 	public static int displayRank(URLConnection conn) throws IOException, ParserConfigurationException, SAXException {
- 	    InputStream is = DataProcessor.getData(conn);
- 	    NodeList nodeList = getNodeList(is);
+ 	    
+		InputStream is = DataProcessor.getData(conn); // get data from url
+ 	    
+ 	    DocumentBuilder domBuilder = DomProcessor.createDomBuilder(); // create dom builder
+ 	   
+ 	    Document doc = DomProcessor.parseDom(is); // parse data
+ 	    
+ 	    NodeList nodeList = getNodeList(doc); // get document node
+ 	    
  	    return getRanking(nodeList);
 	}
 	
-	public static NodeList getNodeList(InputStream is) throws ParserConfigurationException, SAXException, IOException {
-		
-		DocumentBuilder domBuilder = DomBuilder.createDocumentBuilder();
-		Document doc = domBuilder.parse(is); // parse document
+	public static NodeList getNodeList(Document doc) {
 		Element element = doc.getDocumentElement(); // ambil child node
 		NodeList nodeList = element.getElementsByTagName("POPULARITY"); //ambil node dalam POPULARITY
 		
