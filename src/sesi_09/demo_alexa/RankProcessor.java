@@ -17,8 +17,6 @@ public class RankProcessor {
 	public static int displayRank(URLConnection conn) throws IOException, ParserConfigurationException, SAXException {
  	    
 		InputStream is = DataProcessor.getData(conn); // get data from url
- 	    
- 	    DocumentBuilder domBuilder = DomProcessor.createDomBuilder(); // create dom builder
  	   
  	    Document doc = DomProcessor.parseDom(is); // parse data
  	    
