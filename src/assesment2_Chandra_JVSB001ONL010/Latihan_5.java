@@ -44,7 +44,7 @@ public class Latihan_5 {
 
 		// jika pembelian lebih dari item maka input ulang
 		if (jumlahBeli > detailBarang.size()) {
-			System.out.println("Maksimal pembelian 5!");
+			System.out.format("Maksimal pembelian %d!", detailBarang.size());
 			System.out.print("Masukan jumlah beli : ");
 			jumlahBeli = scan.nextInt();
 		}
