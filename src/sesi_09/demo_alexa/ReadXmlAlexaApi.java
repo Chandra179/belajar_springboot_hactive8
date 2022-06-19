@@ -91,10 +91,8 @@ public class ReadXmlAlexaApi {
 		
 		
 		public static void main (String[] args) {
-			
 			ReadXmlAlexaApi obj = new ReadXmlAlexaApi();
 			int alexaRanking = obj.rankingProcessing("bcafinance.co.id");
-			
 			System.out.println("Ranking: " + alexaRanking);
 		}
 }
