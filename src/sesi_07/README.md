@@ -1,9 +1,9 @@
-Selection Sort
+# Selection Sort
 - teknik pengurutan dengan cara mencari nilai tertinggi / terendah di dalam array 
   kemudian menempatkan nilai tersebut di tempat semestinya. 
 - Algorithma ini dapat mengurutkan data dari besar ke kecil (Ascending) dan kecil ke besar (Descending). 
 
-Binary Search 
+# Binary Search 
 - teknik pencarian data dengan cara berulang kali membagi 
   separuh dari jumlah data yang dicari sampai sehingga memperkecil 
   lokasi pencarian menjadi satu data. 
