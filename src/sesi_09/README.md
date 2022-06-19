@@ -47,8 +47,7 @@ DefaultHandler
 # DOM (Document Object Model)
 - xml processing
    
-```
-                              	(xml)
+```               
 	document builder  ----> dom builder ---> dom tree ---> business logic
 	     factory         
 ```     
@@ -69,11 +68,11 @@ DefaultHandler
 </employees>
 ```
 
-NodeList -> collection of nodes
-getElementsByTagName -> return list of nodes (firstname, lastname, location)
-Node -> The Node interface is the primary datatype for the entire
+- NodeList -> collection of nodes
+- getElementsByTagName -> return list of nodes (firstname, lastname, location)
+- Node -> The Node interface is the primary datatype for the entire
         Document Object Model. It represents a single node in the document tree.
-Casting node to element -> (Element) node
-URLConnection -> read/write resource from url
-new URL -> buat url dari string
-openConnection -> instance yang merepresentasikan connection to remote object
+- Casting node to element -> (Element) node
+- URLConnection -> read/write resource from url
+- new URL -> buat url dari string
+- openConnection -> instance yang merepresentasikan connection to remote object
