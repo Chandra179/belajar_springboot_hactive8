@@ -9,18 +9,9 @@
 ------------------------------------------------------------------
 
 ```
-                  konfigurasi/membuat
-SAXParserFactory --------------------> SAXParser 
-										   |
-										   |
-										   |  wraps
-										   |
-										   V
-							     Interface for reading 
-							        an XML document 
-									using callbacks
-
-------------------------------------------------------------------
+                  konfigurasi/membuat               wraps
+SAXParserFactory --------------------> SAXParser  --------> interface for reading XML document
+										   
 ```
 
 SAXParserFactory
@@ -57,9 +48,7 @@ DefaultHandler
 - xml processing
    
 ```
-    XML -------------------------
-		  		                | error handler, entitiy resolver
-		                        v 
+                              (xml)
 	document builder  ----> dom builder ---> dom tree ---> business logic
 	     factory         
 ```     
