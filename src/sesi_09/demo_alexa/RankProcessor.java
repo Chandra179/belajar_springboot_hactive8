@@ -17,16 +17,9 @@ import org.xml.sax.SAXException;
 public class RankProcessor {
 	
 	public static int displayRank(URLConnection conn) throws IOException, ParserConfigurationException, SAXException {
- 	    InputStream is = getData(conn);
+ 	    InputStream is = DataProcessor.getData(conn);
  	    NodeList nodeList = getNodeList(is);
  	    return getRanking(nodeList);
-	}
-	
-	public static InputStream getData(URLConnection conn) throws IOException {
-		
-		// InputStream -> (stream of bytes) that reads from this connection
-		InputStream is = conn.getInputStream();
-		return is;
 	}
 	
 	public static NodeList getNodeList(InputStream is) throws ParserConfigurationException, SAXException, IOException {
