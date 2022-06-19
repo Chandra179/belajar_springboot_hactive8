@@ -15,7 +15,6 @@ import org.xml.sax.SAXException;
 
 public class DomProcessor {
 				
-		// createDocumentBuilder digunakan untuk membuat DocumentBuilder
 		public static DocumentBuilder createDomBuilder() throws ParserConfigurationException {
 			
 			final DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
