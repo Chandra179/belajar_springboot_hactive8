@@ -1,3 +1,13 @@
+mvn clean install compile
+
+mvn exec:java -Dexec.mainClass="com.learning.challenge.TestOnePiece" -Dexec.classpathScope="test"
+
+mvn exec:java -Dexec.mainClass="com.learning.challenge.Main"
+
+mvn exec:java -Dexec.mainClass="com.learning.sax.Main"
+
+mvn -X clean install exec:java -Dexec.mainClass="com.learning.challange.Main"
+
 # XML Parsing (extensible markup language)
 - membaca xml
 - menyimpan dan mengantarkan data
