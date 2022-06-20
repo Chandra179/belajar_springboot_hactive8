@@ -125,7 +125,7 @@ select * from pembeli;
 select * from gaji;
 select * from transaksi;
 
-select p.id_pegawai, nama_pegawai, gaji_pegawai, jabatan, gaji_pegawai
+select p.id_pegawai, nama_pegawai, jabatan, gaji_pegawai
 from pegawai as p
 inner join gaji as g
 on p.id_pegawai = g.id_pegawai

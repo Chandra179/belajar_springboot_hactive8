@@ -16,7 +16,7 @@ public class UsersParser {
 	
 	public List<User> parseUsers() throws ParserConfigurationException {
 		UsersHandler handler = new UsersHandler();
-		String fileName = "src/resources/users.xml";
+		String fileName = "src/main/resources/users.xml";
 		File xmlDocument = Paths.get(fileName).toFile();
 		
 		try {

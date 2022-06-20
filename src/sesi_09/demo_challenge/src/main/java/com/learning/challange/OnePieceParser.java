@@ -16,7 +16,7 @@ public class OnePieceParser {
 	
 	public List<OnePiece> parseUsers() throws ParserConfigurationException {
 		OnePieceHandler handler = new OnePieceHandler();
-		String fileName = "src/resources/onepiece.xml";
+		String fileName = "src/main/resources/onepiece.xml";
 		File xmlDocument = Paths.get(fileName).toFile();
 		
 		try {
