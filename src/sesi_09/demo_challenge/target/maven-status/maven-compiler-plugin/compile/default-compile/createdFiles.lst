@@ -1,5 +1,5 @@
-com\learning\challange\OnePiece.class
-com\learning\challange\OnePieceParser.class
-com\learning\challange\Main.class
-com\learning\challange\OnePieceHandler.class
-com\learning\challange\MyRunner.class
+com\learning\challenge\Main.class
+com\learning\challenge\OnePiece.class
+com\learning\challenge\OnePieceHandler.class
+com\learning\challenge\OnePieceParser.class
+com\learning\challenge\MyRunner.class

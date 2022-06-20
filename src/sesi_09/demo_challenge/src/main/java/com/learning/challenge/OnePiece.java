@@ -1,4 +1,4 @@
-package com.learning.challange;
+package com.learning.challenge;
 
 public class OnePiece {
 

@@ -1,4 +1,4 @@
-package com.learning.challange;
+package com.learning.challenge;
 
 import java.io.File;
 import java.io.IOException;

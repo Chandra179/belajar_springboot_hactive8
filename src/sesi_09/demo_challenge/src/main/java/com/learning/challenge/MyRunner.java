@@ -1,4 +1,4 @@
-package com.learning.challange;
+package com.learning.challenge;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

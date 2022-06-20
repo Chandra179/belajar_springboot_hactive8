@@ -1,10 +1,13 @@
-package com.learning.challange;
+package com.learning.challenge;
 
 import java.util.List;
 
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.junit.Test;
+
+import com.learning.challenge.OnePiece;
+import com.learning.challenge.OnePieceParser;
 
 
 public class TestOnePiece {
