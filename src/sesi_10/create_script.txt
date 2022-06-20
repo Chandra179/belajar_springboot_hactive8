@@ -1,0 +1,48 @@
+-- Table: public.gaji
+
+-- DROP TABLE IF EXISTS public.gaji;
+
+CREATE TABLE IF NOT EXISTS public.gaji
+(
+    id_gaji integer NOT NULL,
+    id_pegawai integer,
+    gaji bigint,
+    tgl_gaji date,
+    CONSTRAINT gaji_pkey PRIMARY KEY (id_gaji)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.gaji
+    OWNER to postgres;
+
+
+
+----------------------------------------
+
+
+
+-- Table: public.menu
+
+-- DROP TABLE IF EXISTS public.menu;
+
+CREATE TABLE IF NOT EXISTS public.menu
+(
+    id_menu integer NOT NULL DEFAULT nextval('menu_id_menu_seq'::regclass),
+    nama_menu character(50) COLLATE pg_catalog."default",
+    jenis character(50) COLLATE pg_catalog."default",
+    harga bigint,
+    CONSTRAINT menu_pkey PRIMARY KEY (id_menu)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.menu
+    OWNER to postgres;
+
+
+
+-------------------------------------
+
+
+
