@@ -101,4 +101,38 @@ insert into gaji values
 	(2009, 9, 3500000, '2012-12-01'),
 	(2010, 10, 3500000, '2012-12-01');
 
+----------------------------------
+
+insert into transaksi values
+	(1001, 211, 111, 9, '2012-09-09'),
+	(1002, 211, 112, 9, '2012-11-08'),
+	(1003, 212, 113, 10, '2012-11-10'),
+	(1004, 213, 114, 10, '2012-11-28'),
+	(1005, 213, 115, 9, '2012-11-28'),
+	(1006, 214, 116, 9, '2012-11-29'),
+	(1007, 215, 117, 10, '2012-12-08'),
+	(1008, 216, 118, 9, '2012-12-08'),
+	(1009, 217, 119, 9, '2012-12-18'),
+	(1010, 218, 119, 9, '2012-12-18'),
+	(1011, 219, 120, 10, '2012-12-28'),
+	(1012, 220, 120, 10, '2012-12-29');
+
+-----------------------------------------
+
+select * from pegawai;
+select * from menu;
+select * from pembeli;
+select * from gaji;
+select * from transaksi;
+
+select p.id_pegawai, nama_pegawai, gaji_pegawai, jabatan, gaji_pegawai
+from pegawai as p
+inner join gaji as g
+on p.id_pegawai = g.id_pegawai
+
+delete from transaksi
+where id_transaksi in(1001, 1002, 1003);
+
+-----------------------------------------
+
 https://stackoverflow.com/questions/35676149/adding-a-column-as-a-foreign-key-gives-error-column-referenced-in-foreign-key-co?answertab=scoredesc#tab-top
