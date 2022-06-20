@@ -61,17 +61,12 @@ db.collection.deleteMany(filter)
 
 -----------------------------
 
+mvn clean install compile
+
+mvn exec:java -Dexec.mainClass="com.learning.challenge.TestOnePiece" -Dexec.classpathScope="test"
+
+mvn exec:java -Dexec.mainClass="com.learning.challange.Main"
 mvn exec:java -Dexec.mainClass="com.learning.sax.Main"
-mvn exec:java -Dexec.mainClass="com.learning.sax.TestOnePiece" -Dexec.classpathScope="test"
+
 
 -----------------------------
-
-
-<plugin>
-	        <groupId>org.codehaus.mojo</groupId>
-	        <artifactId>exec-maven-plugin</artifactId>
-	        <version>1.6.0</version>
-	        <configuration>
-	          <mainClass>com.learning.challenge.JavaReadXmlSaxEx</mainClass>
-	        </configuration>
-	    </plugin>

@@ -35,7 +35,7 @@
             <configuration>
                 <archive>
                     <manifest>
-                        <mainClass>com.learning.sax</mainClass>
+                        <mainClass>com.learning.challenge</mainClass>
                     </manifest>
                 </archive>
             </configuration>
@@ -45,8 +45,7 @@
 	        <artifactId>exec-maven-plugin</artifactId>
 	        <version>1.6.0</version>
 	        <configuration>
-	          <mainClass>com.learning.challenge.TestOnePiece</mainClass>
-	          <classpathScope>test</classpathScope>
+	          <mainClass>com.learning.challenge.Main</mainClass>
 	        </configuration>
 	    </plugin>
     </plugins>

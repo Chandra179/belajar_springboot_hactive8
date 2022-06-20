@@ -45,8 +45,7 @@
 	        <artifactId>exec-maven-plugin</artifactId>
 	        <version>1.6.0</version>
 	        <configuration>
-	          <mainClass>com.learning.sax.TestSaxParser</mainClass>
-	          <classpathScope>test</classpathScope>
+	          <mainClass>com.learning.sax.Main</mainClass>
 	        </configuration>
 	    </plugin>
     </plugins>
