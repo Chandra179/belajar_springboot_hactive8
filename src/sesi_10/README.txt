@@ -1,3 +1,6 @@
+SQL databases -> table-based, 
+NoSQL databases -> document, key-value, graph, or wide-column stores
+
 psql -U postgres
 
 \l 	list of database
