@@ -38,10 +38,7 @@ db.profile.find({ name: "t-rex" });
 -----------------------------
 
 db.collection.updateOne(filter, update)
-db.profile.upadateOne(
-	{ color: "red" },
-	
-)
+db.profile.upadateOne({ color: "red" },{ $set: { name : "allo" } })
 
 -----------------------------
 
