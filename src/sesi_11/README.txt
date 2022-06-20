@@ -3,7 +3,7 @@ advantages -> parsing lbh cepat, mendukung tipe data native: dates, binary data
 
 -----------------------------
 
-use databasa_name -> membuat database
+use database_name -> membuat database
 show dbs -> database list
 show collections -> list of collections
 db.createCollection("profile"); -> membuat collection
@@ -71,8 +71,29 @@ db.collection.replaceOne(filter, update)
 db.collection.deleteOne(filter)
 db.profile.deleteOne({ name : "brachio" });
 
+// jika banyak dokumen dengan nama yang sama,
+// maka salah satu dokumen akan didelete secara random/urut
+db.profile.deleteOne({ name : "t-rex" });
+
 -----------------------------
 
 db.collection.deleteMany(filter)
 
 -----------------------------
+
+db.pasien.deleteMany({ name : "Foxy" })
+db.penyakit.deleteMany({ penyakit : "flu" })
+
+db.penyakit.insertOne({ _id: "sakit_0001", penyakit: "flu" });
+
+// penyakit: "flu" -> (nama koleksi, reference value)
+
+db.pasien.insertOne({ name : "Foxy", umur: 20, penyakit: "flu" });
+var penyakit_flu = db.pasien.findOne().penyakit
+db.penyakit.findOne({ penyakit : penyakit_id })
+
+db.pasien.insertOne({ name : "Foxy", umur: 20, penyakit: "sakit_0001" });
+var penyakit_id = db.pasien.findOne().penyakit
+db.penyakit.findOne({ penyakit : penyakit_id })
+
+-------------------------------
