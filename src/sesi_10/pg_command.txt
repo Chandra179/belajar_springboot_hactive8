@@ -133,6 +133,7 @@ on p.id_pegawai = g.id_pegawai
 delete from transaksi
 where id_transaksi in(1001, 1002, 1003);
 
+select * from pegawai
 -----------------------------------------
 
 https://stackoverflow.com/questions/35676149/adding-a-column-as-a-foreign-key-gives-error-column-referenced-in-foreign-key-co?answertab=scoredesc#tab-top
