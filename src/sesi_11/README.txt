@@ -77,9 +77,12 @@ db.profile.deleteOne({ name : "t-rex" });
 
 -----------------------------
 
+
 db.collection.deleteMany(filter)
 
------------------------------
+
+--------------ONE TO ONE-----------------
+
 
 db.pasien.deleteMany({ name : "Foxy" })
 db.penyakit.deleteMany({ penyakit : "flu" })
@@ -87,6 +90,7 @@ db.penyakit.deleteMany({ penyakit : "flu" })
 db.penyakit.insertOne({ _id: "sakit_0001", penyakit: "flu" });
 
 // penyakit: "flu" -> (nama koleksi, reference value)
+
 
 db.pasien.insertOne({ name : "Foxy", umur: 20, penyakit: "flu" });
 var penyakit_flu = db.pasien.findOne().penyakit
@@ -96,4 +100,86 @@ db.pasien.insertOne({ name : "Foxy", umur: 20, penyakit: "sakit_0001" });
 var penyakit_id = db.pasien.findOne().penyakit
 db.penyakit.findOne({ penyakit : penyakit_id })
 
--------------------------------
+
+-----------------ONE TO MANY-------------------
+
+
+use transaksi_chandra
+db.createCollection("pelanggan");
+db.createCollection("transaksi"); 
+
+// 1 pelanggan mempunyai banyak transaksi
+db.pelanggan.insertOne({ _id : "PL0001", nama_pelanggan: "chandra" });
+
+db.transaksi.insertMany(
+	[
+		{ _id : "TR0001", 
+		  tanggal_transaksi : new Date(),  
+          	  total_harga : 100000,
+		  id_pelanggan : "PL0001"  
+		},
+		{ _id : "TR0002", 
+		  tanggal_transaksi : new Date(),  
+          	  total_harga : 199999,
+		  id_pelanggan : "PL0001"  
+		},
+		{ _id : "TR0003", 
+		  tanggal_transaksi : new Date(),  
+          	  total_harga : 200000,
+		  id_pelanggan : "PL0001"  
+		}
+	]
+)
+
+db.transaksi.find().pretty()
+db.transaksi.findOne({ total_harga : 199999 })
+
+
+
+-----------------MANY TO MANY-------------------
+
+
+
+db.createCollection("detailtransaksi");
+db.detailtransaksi.insertMany(
+	[
+		{no_trans : "TR0001", barang : "Gelas", jumlah : 3},
+		{no_trans : "TR0001", barang : "Piring", jumlah : 6},
+		{no_trans : "TR0001", barang : "Sendok", jumlah : 9}
+	]
+)
+
+db.transaksi.aggregate({ $lookup : 
+	{ 
+		from : "detail_transaksi", 
+		localField : "_id", 
+		foreignField : "_id", 
+		as : "detail" 
+	} 
+}) 
+
+
+db.transaksi.aggregate([
+	{ $lookup : 
+		{ from : "detail_transaksi", 
+		  localField : "_id", 
+              foreignField : "no_trans", 
+		  as : "detail"
+		} 
+	}, 
+	{ $lookup : 
+		{ from : "pelanggan", 
+		  localField : "id_pelanggan", 
+		  foreignField : "_id", 
+		  as : "customer" 
+		} 
+	} 
+])
+
+
+
+-----------------------------------------
+
+
+
+
