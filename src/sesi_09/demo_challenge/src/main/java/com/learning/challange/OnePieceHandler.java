@@ -1,4 +1,4 @@
-package sesi_09.demo_challenge.src.main.java.com.learning.challange;
+package com.learning.challange;
 
 import java.util.ArrayList;
 import java.util.List;

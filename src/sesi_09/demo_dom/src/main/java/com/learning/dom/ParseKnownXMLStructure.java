@@ -1,4 +1,4 @@
-package sesi_09.demo_dom.src.main.java.com.learning.dom;
+package com.learning.dom;
 
 import java.io.File;
 import java.io.IOException;

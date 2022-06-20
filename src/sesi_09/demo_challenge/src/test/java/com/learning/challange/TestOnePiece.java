@@ -1,4 +1,4 @@
-package sesi_09.demo_challenge.src.test.java.com.learning.challange;
+package com.learning.challange;
 
 import java.util.List;
 
@@ -6,8 +6,6 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.junit.Test;
 
-import sesi_09.demo_challenge.src.main.java.com.learning.challange.OnePiece;
-import sesi_09.demo_challenge.src.main.java.com.learning.challange.OnePieceParser;
 
 public class TestOnePiece {
 	

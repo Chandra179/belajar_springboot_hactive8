@@ -1,4 +1,4 @@
-package sesi_09.demo_sax.src.main.java.com.learning.sax;
+package com.learning.sax;
 
 import java.io.File;
 import java.io.IOException;

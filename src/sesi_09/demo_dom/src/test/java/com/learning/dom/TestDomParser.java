@@ -1,4 +1,4 @@
-package sesi_09.demo_dom.src.test.java.com.learning.dom;
+package com.learning.dom;
 
 import java.io.IOException;
 
@@ -9,7 +9,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import sesi_09.demo_dom.src.main.java.com.learning.dom.ParseKnownXMLStructure;
 
 public class TestDomParser {
 
