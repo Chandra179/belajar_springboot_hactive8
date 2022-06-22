@@ -77,5 +77,15 @@ public class Course {
 		this.students = students;
 	}
 	
+	@Override
+	public String toString() {
+		return "Book{" +
+				"id=" + id +
+				", title='" + title + '\'' + 
+				", modules='" + modules + '\'' +
+				", fee='" + fee + '\'' +
+				'}';
+	}
+	
 	
 }

@@ -35,6 +35,8 @@ public class Main implements CommandLineRunner {
 
 		studentRepository.save(student);
 
+		System.out.println(student.getCourses());
+
 	}
 
 	public static void main(String[] args) {
