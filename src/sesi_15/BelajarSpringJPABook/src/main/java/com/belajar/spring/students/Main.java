@@ -1,6 +1,7 @@
 package com.belajar.spring.students;
 
 import java.util.Arrays;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +36,7 @@ public class Main implements CommandLineRunner {
 
 		studentRepository.save(student);
 
-		System.out.println(student.getCourses());
+		logger.log(Level.INFO, "Courses : " + student.getCourses());
 
 	}
 
