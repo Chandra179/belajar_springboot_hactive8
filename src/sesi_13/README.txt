@@ -27,6 +27,19 @@ HIBERNATE
 		- get physical connection with a database
 		- hanya di inisialisasi ketika interaksi dengan database dibutuhkan
 		- tidak thread safe
+		  
+		  transient 
+		  	− A new instance of a persistent class
+		  	- has no representation in the database and no identifier value 
+		  	  is considered transient by Hibernate
+
+		  persistent 
+		    − A persistent instance has a representation in the database, 
+		      an identifier value and is associated with a Session.
+	
+		  detached 
+		    − Once we close the Hibernate Session, 
+		      the persistent instance will become a detached instance.
 
 	4. Transaction object
 	5. Query object
