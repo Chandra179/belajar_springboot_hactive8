@@ -26,11 +26,14 @@ public class Main implements CommandLineRunner {
 
 		userRepository.save(user1);
 		userRepository.save(user2);
+		// userRepository.save(user2); ERROR duplicate entries 1 email per user
 
 		Addresses addr1 = new Addresses("palembang", "indonesia", "indonesia", "mayor street 123", "30333", user1);
 		Addresses addr2 = new Addresses("palembang", "indonesia", "indonesia", "mayor street 123", "30333", user2);
+		Addresses addr3 = new Addresses("palembang", "indonesia", "indonesia", "mayor street 123", "66666", user1);
 
 		addressesRepository.save(addr1);
+		// addressesRepository.save(addr3); ERROR duplicate entries (same id)
 		addressesRepository.save(addr2);
 
 		System.out.println(addr1);

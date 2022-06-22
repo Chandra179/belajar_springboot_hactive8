@@ -3,24 +3,39 @@ package com.belajar.spring.latihan;
 import java.math.BigInteger;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 @Entity
+@Table(uniqueConstraints={
+    @UniqueConstraint(columnNames = {"user_id"})
+}) 
 public class Addresses {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private BigInteger id;
 
+	@Column(nullable = false)
 	private String city;
+
+	@Column(nullable = false)
 	private String country;
+
+	@Column(nullable = false)
 	private String state;
+
+	@Column(nullable = false)
 	private String street;
+
+	@Column(nullable = false)
 	private String zip_code;
 
 	@OneToOne(cascade = CascadeType.MERGE)

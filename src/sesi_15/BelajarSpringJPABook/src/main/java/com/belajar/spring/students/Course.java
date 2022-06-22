@@ -3,6 +3,7 @@ package com.belajar.spring.students;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -16,9 +17,14 @@ public class Course {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
+	@Column(nullable = false, unique = true)
 	private String title;
+	
+	@Column(nullable = false)
 	private int modules;
+
+	@Column(nullable = false)
 	private double fee;
 	
 	@ManyToMany(
