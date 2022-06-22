@@ -11,16 +11,6 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Book {
 
-	public Book() {
-
-	}
-
-	public Book(String title, String writer, String isbn) {
-		this.title = title;
-		this.writer = writer;
-		this.isbn = isbn;
-	}
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -37,6 +27,16 @@ public class Book {
 	@ManyToOne
 	@JoinColumn
 	private BookCategory bookCategory;
+
+	public Book() {
+
+	}
+
+	public Book(String title, String writer, String isbn) {
+		this.title = title;
+		this.writer = writer;
+		this.isbn = isbn;
+	}
 
 	public Long getId() {
 		return id;

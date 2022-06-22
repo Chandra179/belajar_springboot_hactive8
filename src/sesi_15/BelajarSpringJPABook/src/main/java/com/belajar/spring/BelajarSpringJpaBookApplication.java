@@ -10,6 +10,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.belajar.spring.model.Book;
+import com.belajar.spring.model.BookCategory;
+import com.belajar.spring.repository.BookCategoryRepository;
 import com.belajar.spring.repository.BookRepository;
 
 @SpringBootApplication
@@ -19,6 +21,9 @@ public class BelajarSpringJpaBookApplication implements CommandLineRunner {
 
 	@Autowired
 	private BookRepository bookRepository;
+
+	@Autowired
+	private BookCategoryRepository bookCategoryRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(BelajarSpringJpaBookApplication.class, args);
@@ -74,6 +79,12 @@ public class BelajarSpringJpaBookApplication implements CommandLineRunner {
 		byNativeWriter.forEach(x -> System.out.println(x.getTitle() + " " + x.getWriter()));
 		logger.log(Level.INFO, "Writer by native query : " + byNativeWriter);
 
+		BookCategory bookCategory = bookCategoryRepository.save(
+				new BookCategory("Programming",
+				new Book("Java 1", "Teten N.", "SEI92002"), 
+				new Book("Java 2", "Teten N.", "UEOEI829")));
+
+		logger.log(Level.INFO, "bookCategory : " + bookCategory);
 	}
 
 }
