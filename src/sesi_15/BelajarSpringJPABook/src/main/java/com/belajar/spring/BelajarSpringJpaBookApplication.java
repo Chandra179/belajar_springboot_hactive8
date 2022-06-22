@@ -1,0 +1,79 @@
+package com.belajar.spring;
+
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.belajar.spring.model.Book;
+import com.belajar.spring.repository.BookRepository;
+
+@SpringBootApplication
+public class BelajarSpringJpaBookApplication implements CommandLineRunner {
+
+	Logger logger = Logger.getLogger(BelajarSpringJpaBookApplication.class.getName());
+
+	@Autowired
+	private BookRepository bookRepository;
+
+	public static void main(String[] args) {
+		SpringApplication.run(BelajarSpringJpaBookApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		// TODO Auto-generated method stub
+
+//		Book book1 = new Book();
+//		book1.setTitle("Belajar Spring Boot 1");
+//		book1.setWriter("Wilson aja");
+//		book1.setIsbn("IS-909190");
+//
+//		Book book2 = new Book();
+//		book2.setTitle("Belajar Spring Boot 2");
+//		book2.setWriter("Kevin");
+//		book2.setIsbn("IS-909089");
+//
+//		bookRepository.save(book1);
+//		bookRepository.save(book2);
+		
+		final String title = "Belajar Spring Boot 1";
+		List<Book> byTitle = bookRepository.findByTitle(title);
+		byTitle.forEach(x -> System.out.println(x.getTitle()));
+		logger.log(Level.INFO, "Title : " + byTitle);
+
+
+		Logger logger = Logger.getLogger(BelajarSpringJpaBookApplication.class.getName());
+		List<Book> books = bookRepository.findAll();
+		logger.log(Level.INFO, "Books : " + books);
+
+
+		final String writer = "Wilson aja";
+		List<Book> byWriter = bookRepository.findAllByWriter(writer);
+		byWriter.forEach(x -> System.out.println(x.getWriter()));
+		logger.log(Level.INFO, "Writer : " + byWriter);
+
+
+		final String isbn = "IS-909089";
+		List<Book> byIsbn = bookRepository.findByIsbn(isbn);
+		byIsbn.forEach(x -> System.out.println(x.getIsbn()));
+		logger.log(Level.INFO, "ISBN : " + byIsbn);
+		
+		
+		List<Book> nativeBooksQuery = bookRepository.findAllQueryNative();
+		nativeBooksQuery.forEach(x -> System.out.println(x.getTitle() + " " + x.getWriter()));
+		logger.log(Level.INFO, "Book by native query : " + nativeBooksQuery);
+
+
+		final String nativeWriter = "Kevin";
+		List<Book> byNativeWriter = bookRepository.findAllByWriterQueryNative(nativeWriter);
+		byNativeWriter.forEach(x -> System.out.println(x.getTitle() + " " + x.getWriter()));
+		logger.log(Level.INFO, "Writer by native query : " + byNativeWriter);
+
+	}
+
+}
