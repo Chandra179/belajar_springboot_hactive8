@@ -1,4 +1,4 @@
-package com.belajar.spring.model;
+package com.belajar.spring.book;
 
 import java.util.List;
 import java.util.stream.Collectors;

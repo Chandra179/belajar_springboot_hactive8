@@ -1,4 +1,4 @@
-package com.belajar.spring;
+package com.belajar.spring.book;
 
 import java.util.List;
 import java.util.logging.Level;
@@ -9,15 +9,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.belajar.spring.model.Book;
-import com.belajar.spring.model.BookCategory;
-import com.belajar.spring.repository.BookCategoryRepository;
-import com.belajar.spring.repository.BookRepository;
-
 @SpringBootApplication
-public class BelajarSpringJpaBookApplication implements CommandLineRunner {
+public class Main implements CommandLineRunner {
 
-	Logger logger = Logger.getLogger(BelajarSpringJpaBookApplication.class.getName());
+	Logger logger = Logger.getLogger(Main.class.getName());
 
 	@Autowired
 	private BookRepository bookRepository;
@@ -26,7 +21,7 @@ public class BelajarSpringJpaBookApplication implements CommandLineRunner {
 	private BookCategoryRepository bookCategoryRepository;
 
 	public static void main(String[] args) {
-		SpringApplication.run(BelajarSpringJpaBookApplication.class, args);
+		SpringApplication.run(Main.class, args);
 	}
 
 	@Override
@@ -45,34 +40,28 @@ public class BelajarSpringJpaBookApplication implements CommandLineRunner {
 //
 //		bookRepository.save(book1);
 //		bookRepository.save(book2);
-		
+
 		final String title = "Belajar Spring Boot 1";
 		List<Book> byTitle = bookRepository.findByTitle(title);
 		byTitle.forEach(x -> System.out.println(x.getTitle()));
 		logger.log(Level.INFO, "Title : " + byTitle);
 
-
-		Logger logger = Logger.getLogger(BelajarSpringJpaBookApplication.class.getName());
 		List<Book> books = bookRepository.findAll();
 		logger.log(Level.INFO, "Books : " + books);
-
 
 		final String writer = "Wilson aja";
 		List<Book> byWriter = bookRepository.findAllByWriter(writer);
 		byWriter.forEach(x -> System.out.println(x.getWriter()));
 		logger.log(Level.INFO, "Writer : " + byWriter);
 
-
 		final String isbn = "IS-909089";
 		List<Book> byIsbn = bookRepository.findByIsbn(isbn);
 		byIsbn.forEach(x -> System.out.println(x.getIsbn()));
 		logger.log(Level.INFO, "ISBN : " + byIsbn);
-		
-		
+
 		List<Book> nativeBooksQuery = bookRepository.findAllQueryNative();
 		nativeBooksQuery.forEach(x -> System.out.println(x.getTitle() + " " + x.getWriter()));
 		logger.log(Level.INFO, "Book by native query : " + nativeBooksQuery);
-
 
 		final String nativeWriter = "Kevin";
 		List<Book> byNativeWriter = bookRepository.findAllByWriterQueryNative(nativeWriter);
@@ -82,7 +71,8 @@ public class BelajarSpringJpaBookApplication implements CommandLineRunner {
 		BookCategory bookCategory = bookCategoryRepository.save(
 				new BookCategory("Programming",
 				new Book("Java 1", "Teten N.", "SEI92002"), 
-				new Book("Java 2", "Teten N.", "UEOEI829")));
+				new Book("Java 2", "Teten N.", "UEOEI829"))
+		);
 
 		logger.log(Level.INFO, "bookCategory : " + bookCategory);
 	}
