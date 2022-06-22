@@ -6,21 +6,25 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
-public class Users {
+public class User {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private BigInteger id;
 
 	private String email;
 	private String name;
 	private String password;
 
-	public Users() {
+	@OneToOne(mappedBy = "user")
+	private Addresses addresses;
+
+	public User() {
 	}
 
-	public Users(String email, String name, String password) {
+	public User(String email, String name, String password) {
 		this.email = email;
 		this.name = name;
 		this.password = password;
@@ -56,6 +60,16 @@ public class Users {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	@Override
+	public String toString() {
+		return "User{" +
+				"id=" + id +
+				", email='" + email + '\'' + 
+				", name='" + name + '\'' +
+				", password='" + password + '\'' +
+				'}';
 	}
 
 }

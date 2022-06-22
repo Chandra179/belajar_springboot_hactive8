@@ -2,14 +2,19 @@ package com.belajar.spring.latihan;
 
 import java.math.BigInteger;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
+@Entity
 public class Addresses {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private BigInteger id;
 
 	private String city;
@@ -17,6 +22,23 @@ public class Addresses {
 	private String state;
 	private String street;
 	private String zip_code;
+
+	@OneToOne(cascade = CascadeType.MERGE)
+	@JoinColumn(name = "user_id", referencedColumnName = "id")
+	private User user;
+
+	public Addresses() {
+
+	}
+
+	public Addresses(String city, String country, String state, String street, String zip_code, User user) {
+		this.city = city;
+		this.country = country;
+		this.state = state;
+		this.street = street;
+		this.zip_code = zip_code;
+		this.user = user;
+	}
 
 	public BigInteger getId() {
 		return id;
@@ -64,6 +86,19 @@ public class Addresses {
 
 	public void setZip_code(String zip_code) {
 		this.zip_code = zip_code;
+	}
+	
+	@Override
+	public String toString() {
+		return "Address{" +
+				"id=" + id +
+				", city='" + city + '\'' + 
+				", country='" + country + '\'' +
+				", state='" + state + '\'' +
+				", street='" + street + '\'' +
+				", zip_code='" + zip_code + '\'' +
+				", user='" + user.getName() + '\'' +
+				'}';
 	}
 
 

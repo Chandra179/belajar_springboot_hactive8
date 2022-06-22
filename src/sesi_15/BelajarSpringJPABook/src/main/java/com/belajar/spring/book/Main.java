@@ -26,7 +26,6 @@ public class Main implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		// TODO Auto-generated method stub
 
 //		Book book1 = new Book();
 //		book1.setTitle("Belajar Spring Boot 1");
