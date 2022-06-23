@@ -3,7 +3,7 @@
   <groupId>org.coba</groupId>
   <artifactId>DemoHibernate</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Test Hibernate1</name>
+  <name>Demo Hibernate</name>
   
   <dependencies>
 		<dependency>

@@ -12,6 +12,7 @@
 
 ------------------------------------------
 
+Java app -> persistent obj -> hibernate -> database
 
 HIBERNATE
 
