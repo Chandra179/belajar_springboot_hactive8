@@ -21,18 +21,25 @@ public class Mahasiswa {
 	@Column(length = 64)
 	private String id;
 
+
 	@NotNull
 	@NotBlank
-	@Column(unique = true)
+	@Column(name = "nim", unique = true)
 	private String nim;
 
 	@NotNull
 	@NotBlank
+	@Column(name = "nama", unique = true)
 	private String nama;
+
+	@NotNull
+	@NotBlank
+	@Column(name = "ipk")
 	private float ipk;
 
 	@NotNull
 	@NotBlank
+	@Column(name = "jurusan")
 	private String jurusan;
 
 }
