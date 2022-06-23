@@ -32,7 +32,7 @@ public class MahasiswaController {
 
     @GetMapping("/index")
     public ModelMap getAll(Pageable pageable) {
-        return new ModelMap().addAttribute("mahasiswas", mahasiswaDao.findAll(pageable));
+		return new ModelMap().addAttribute("mahasiswa", mahasiswaDao.findAll(pageable));
     }
 
     @GetMapping("/")

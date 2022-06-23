@@ -1,5 +1,9 @@
 package com.belajar.spring.dao;
 
-public class MahasiswaDao {
+import org.springframework.data.repository.PagingAndSortingRepository;
+
+import com.belajar.spring.entity.Mahasiswa;
+
+public interface MahasiswaDao extends PagingAndSortingRepository<Mahasiswa, String> {
 
 }
