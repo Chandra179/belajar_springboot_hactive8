@@ -1,14 +1,14 @@
-package com.demo.hello;
+package com.belajar.spring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoHelloApplication {
+public class BelajarSpringApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoHelloApplication.class, args);
-		System.out.println("Hello");
+		SpringApplication.run(BelajarSpringApplication.class, args);
+		System.out.println("Hello World!");
 	}
 
 }
