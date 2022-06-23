@@ -1,22 +1,16 @@
 package com.belajar.spring.controller;
 
-import java.awt.print.Pageable;
-
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.belajar.spring.dao.MahasiswaDao;
@@ -27,12 +21,12 @@ public class MahasiswaController {
 
 	private final static Logger LOGGER = LoggerFactory.getLogger(MahasiswaController.class.getName());
 
-    @Autowired
+	@Autowired
     private MahasiswaDao mahasiswaDao;
 
     @GetMapping("/index")
     public ModelMap getAll(Pageable pageable) {
-		return new ModelMap().addAttribute("mahasiswa", mahasiswaDao.findAll(pageable));
+        return new ModelMap().addAttribute("mahasiswas", mahasiswaDao.findAll(pageable));
     }
 
     @GetMapping("/")
@@ -50,10 +44,10 @@ public class MahasiswaController {
 
     @PostMapping("/mahasiswa/form")
     public String editMahasiswa(@ModelAttribute @Valid Mahasiswa mahasiswa, BindingResult errors, SessionStatus status) {
-		LOGGER.info(mahasiswa.toString());
-		LOGGER.info(errors.toString());
-		LOGGER.info("" + errors.hasErrors());
-		LOGGER.info("" + errors.hasGlobalErrors());
+        LOGGER.info(mahasiswa.toString());
+        LOGGER.info(errors.toString());
+        LOGGER.info("" + errors.hasErrors());
+        LOGGER.info("" + errors.hasGlobalErrors());
         if (errors.hasErrors())
             return "/mahasiswa/form";
         try {
@@ -62,7 +56,7 @@ public class MahasiswaController {
             return "redirect:/index";
         } catch (DataAccessException e) {
             errors.reject("error.object", e.getMessage());
-			LOGGER.error(e.getMessage());
+            LOGGER.error(e.getMessage());
             return "/mahasiswa/form";
         }
     }

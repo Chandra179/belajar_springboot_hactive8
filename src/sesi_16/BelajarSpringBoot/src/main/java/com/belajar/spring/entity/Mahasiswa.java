@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -13,6 +14,7 @@ import lombok.Data;
 
 @Entity
 @Data
+@Table(name="mahasiswa")
 public class Mahasiswa {
 
 	@Id
@@ -29,11 +31,10 @@ public class Mahasiswa {
 
 	@NotNull
 	@NotBlank
-	@Column(name = "nama", unique = true)
+	@Column(name = "nama")
 	private String nama;
 
-	@NotNull
-	@NotBlank
+	
 	@Column(name = "ipk")
 	private float ipk;
 
