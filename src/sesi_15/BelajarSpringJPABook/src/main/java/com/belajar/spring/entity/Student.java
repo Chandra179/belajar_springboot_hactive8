@@ -1,4 +1,4 @@
-package com.belajar.spring.students;
+package com.belajar.spring.entity;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -21,7 +21,7 @@ public class Student {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(nullable = false, unique = true)
+	@Column(nullable = false)
 	private String name;
 
 	@Column(nullable = false)
@@ -29,7 +29,7 @@ public class Student {
 	
 	@ManyToMany(
 			fetch = FetchType.LAZY,
-			cascade = CascadeType.PERSIST
+			cascade = CascadeType.MERGE
 	)
 	@JoinTable(
 			name = "students_courses",

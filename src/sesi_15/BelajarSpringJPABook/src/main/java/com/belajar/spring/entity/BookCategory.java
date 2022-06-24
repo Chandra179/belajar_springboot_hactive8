@@ -1,4 +1,4 @@
-package com.belajar.spring.book;
+package com.belajar.spring.entity;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -20,13 +20,11 @@ public class BookCategory {
 
 	private String name;
 
-	@OneToMany(
-			mappedBy = "bookCategory", 
-			cascade = CascadeType.ALL
-	)
+	@OneToMany(mappedBy = "bookCategory", cascade = CascadeType.ALL)
 	private List<Book> books;
 
-	public BookCategory () {}
+	public BookCategory() {
+	}
 
 	public BookCategory(String name, Book... books) {
 		this.name = name;

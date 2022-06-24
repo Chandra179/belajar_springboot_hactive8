@@ -1,4 +1,4 @@
-package com.belajar.spring.book;
+package com.belajar.spring.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
