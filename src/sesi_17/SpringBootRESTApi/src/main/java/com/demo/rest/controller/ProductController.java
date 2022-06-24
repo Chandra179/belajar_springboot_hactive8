@@ -2,6 +2,7 @@ package com.demo.rest.controller;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,47 +19,50 @@ import com.demo.rest.service.ProductService;
 public class ProductController {
 
 	@Autowired
-	private ProductRepository produkRepository;
+	private ProductRepository productRepository;
 
 	@Autowired
-	private ProductService produkService;
+	private ProductService productService;
 
-	@GetMapping("/products")
+	@GetMapping("/product")
 	public List<Product> findAllProducts() {
-		return produkRepository.findAll();
+		return productRepository.findAll();
 	}
 
-	@PostMapping("/products")
-	public Product saveProducts(@RequestBody Product product) {
-		return produkService.saveProduct(product);
+	@PostMapping("/product")
+	public Product saveProduct(@RequestBody Product product) {
+		return productService.saveProduct(product);
 	}
 
-	@GetMapping("/products/name/{name}")
-	public List<Product> findAllProductsByName(@PathVariable String name) {
-		return produkService.findAllProductsByName(name);
+	@GetMapping("/product/id/{id}")
+	public ResponseEntity<?> findProductById(@PathVariable Long id) {
+		Optional<Product> product = productService.findProductById(id);
+		if (product.isEmpty()) {
+			return new ResponseEntity<>("ID Produk tidak ditemukan", HttpStatus.BAD_REQUEST);
+		}
+		return new ResponseEntity<>(product, HttpStatus.OK);
 	}
 
-	@DeleteMapping("/products/id/{id}")
-	public void deleteById(@PathVariable Long id) {
-		produkService.deleteProductById(id);
+	@DeleteMapping("/product")
+	public ResponseEntity<?> deleteProduct(@RequestParam Long id) {
+		productService.deleteProductById(id);
+		return new ResponseEntity<>("Product deleted", HttpStatus.OK);
 	}
 
-	@CrossOrigin
-	@PutMapping("/products")
+	@PutMapping("/product")
 	public ResponseEntity<?> updateProductById(@RequestBody Product product, @RequestParam Long id) {
-
 		try {
-			Product checkProduct = produkService.findProductById(id);
-			if (checkProduct.getId() != id) {
-				return new ResponseEntity<>("ID Data produk tidak sesuai", HttpStatus.OK);
+			Optional<Product> checkProduct = productService.findProductById(id);
+			if (checkProduct.isEmpty()) {
+				return new ResponseEntity<>("ID Data produk tidak sesuai", HttpStatus.BAD_REQUEST);
 			}
 			product.setId(id);
-			produkService.saveProduct(product);
+			productService.saveProduct(product);
 
 			// update from tb_product set name="Acer", hargaBeli=500, hargaJual=501
 			// where id=?1
 
-			return new ResponseEntity<>("Berhasil simpan produk", HttpStatus.OK);
+			return new ResponseEntity<>(product, HttpStatus.OK);
 		} catch (NoSuchElementException e) {
 			return new ResponseEntity<>("Terjadi kesalahan" + e.getMessage(), HttpStatus.OK);
 		}
