@@ -61,8 +61,8 @@ public class ProductController {
 
 			// update from tb_product set name="Acer", hargaBeli=500, hargaJual=501
 			// where id=?1
-
 			return new ResponseEntity<>(product, HttpStatus.OK);
+
 		} catch (NoSuchElementException e) {
 			return new ResponseEntity<>("Terjadi kesalahan" + e.getMessage(), HttpStatus.OK);
 		}
