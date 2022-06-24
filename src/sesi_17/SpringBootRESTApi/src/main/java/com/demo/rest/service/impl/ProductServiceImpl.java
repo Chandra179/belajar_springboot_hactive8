@@ -5,36 +5,36 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.demo.rest.entity.Products;
-import com.demo.rest.repository.ProductsRepository;
-import com.demo.rest.service.ProductsService;
+import com.demo.rest.entity.Product;
+import com.demo.rest.repository.ProductRepository;
+import com.demo.rest.service.ProductService;
 
 @Service
-public class ProductServiceImpl implements ProductsService {
+public class ProductServiceImpl implements ProductService {
 
 	@Autowired
-	private ProductsRepository productsRepository;
+	private ProductRepository productsRepository;
 
 	@Override
-	public List<Products> findAllProducts() {
+	public List<Product> findAllProducts() {
 		// TODO Auto-generated method stub
 		return productsRepository.findAll();
 	}
 
 	@Override
-	public List<Products> findAllProductsByName(String name) {
+	public List<Product> findAllProductsByName(String name) {
 		// TODO Auto-generated method stub
 		return productsRepository.findAllByName(name);
 	}
 
 	@Override
-	public Products findProductById(Long id) {
+	public Product findProductById(Long id) {
 		// TODO Auto-generated method stub
 		return productsRepository.findProductsById(id);
 	}
 
 	@Override
-	public Products saveProduct(Products product) {
+	public Product saveProduct(Product product) {
 		// TODO Auto-generated method stub
 		return productsRepository.save(product);
 	}

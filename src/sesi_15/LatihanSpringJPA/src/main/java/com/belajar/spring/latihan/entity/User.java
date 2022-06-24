@@ -1,4 +1,4 @@
-package com.belajar.spring.latihan;
+package com.belajar.spring.latihan.entity;
 
 import java.math.BigInteger;
 
@@ -25,7 +25,7 @@ public class User {
 	private String password;
 
 	@OneToOne(mappedBy = "user")
-	private Addresses addresses;
+	private Address addresses;
 
 	public User() {
 	}

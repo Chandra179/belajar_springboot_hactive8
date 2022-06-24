@@ -14,7 +14,7 @@ import lombok.ToString;
 @Table(name = "tb_product")
 @Data
 @ToString
-public class Products {
+public class Product {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

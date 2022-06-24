@@ -7,6 +7,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.belajar.spring.latihan.entity.Address;
+import com.belajar.spring.latihan.entity.User;
+import com.belajar.spring.latihan.repository.AddressRepository;
+import com.belajar.spring.latihan.repository.UserRepository;
+
 @SpringBootApplication
 public class Main implements CommandLineRunner {
 
@@ -16,7 +21,7 @@ public class Main implements CommandLineRunner {
 	private UserRepository userRepository;
 
 	@Autowired
-	private AddressesRepository addressesRepository;
+	private AddressRepository addressesRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -28,8 +33,8 @@ public class Main implements CommandLineRunner {
 		userRepository.save(user2);
 		// userRepository.save(user2); ERROR duplicate entries 1 email per user
 
-		Addresses addr1 = new Addresses("palembang", "indonesia", "indonesia", "mayor street 123", "30333", user1);
-		Addresses addr2 = new Addresses("palembang", "indonesia", "indonesia", "mayor street 123", "30333", user2);
+		Address addr1 = new Address("palembang", "indonesia", "indonesia", "mayor street 123", "30333", user1);
+		Address addr2 = new Address("palembang", "indonesia", "indonesia", "mayor street 123", "30333", user2);
 		// Addresses addr3 = new Addresses("palembang", "indonesia", "indonesia", "mayor street 123", "66666", user1);
 
 		addressesRepository.save(addr1);

@@ -1,4 +1,4 @@
-package com.belajar.spring.latihan;
+package com.belajar.spring.latihan.entity;
 
 import java.math.BigInteger;
 
@@ -17,7 +17,7 @@ import javax.persistence.UniqueConstraint;
 @Table(uniqueConstraints={
     @UniqueConstraint(columnNames = {"user_id"})
 }) 
-public class Addresses {
+public class Address {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -42,11 +42,11 @@ public class Addresses {
 	@JoinColumn(name = "user_id", referencedColumnName = "id")
 	private User user;
 
-	public Addresses() {
+	public Address() {
 
 	}
 
-	public Addresses(String city, String country, String state, String street, String zip_code, User user) {
+	public Address(String city, String country, String state, String street, String zip_code, User user) {
 		this.city = city;
 		this.country = country;
 		this.state = state;
