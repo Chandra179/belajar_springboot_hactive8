@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.spring.rest</groupId>
-	<artifactId>DemoSpringRESTApi</artifactId>
+	<artifactId>DemoSpringRestApi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-boot-data-jpa</name>
 	<description>Demo project for Spring Boot Apis CRUD using Spring Data JPA</description>
@@ -51,11 +51,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-		  <groupId>io.github.jpenren</groupId>
-		  <artifactId>thymeleaf-spring-data-dialect</artifactId>
-		  <version>3.4.0</version>
 		</dependency>
 	</dependencies>
 
