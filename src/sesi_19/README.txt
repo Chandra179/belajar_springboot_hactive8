@@ -19,4 +19,15 @@ OpenAPI Document
 - path         : api endpoint
 - operation    : dokumentasi operation pada rest api
   - bisa 1/lebih operation, karena dalam HTTP satu url bisa punya banyak method (GET, POST, PUT)
-- parameter
+  - parameter
+    - bisa memiliki lebih dari 1 parameter
+    - bisa menambahkan parameter pada operation
+    - query parameter, path variable, header, coookie, etc.
+    - atribut
+      - schema
+        - tipe data untuk parameter
+        - menggunakan JSON schema untuk identifikasi struktur data
+          - string, boolean, array, object, etc.
+        - json schema validation
+          - memberitahu validasi yang diperlukan ketika pengguna membaca OpenAPI kita
+        
