@@ -13,7 +13,6 @@ import lombok.ToString;
 @Entity
 @Table(name = "tb_user")
 @Data
-@ToString
 public class User {
 
 	@Id
@@ -40,26 +39,6 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Long getId() {
 		return id;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 }
