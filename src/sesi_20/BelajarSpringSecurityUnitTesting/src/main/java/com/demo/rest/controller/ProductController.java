@@ -37,7 +37,7 @@ public class ProductController {
 	@GetMapping("/product/id/{id}")
 	public ResponseEntity<?> findProductById(@PathVariable Long id) {
 		Optional<Product> product = productService.findProductById(id);
-		if (product.isEmpty()) {
+		if (!product.isPresent()) {
 			return new ResponseEntity<>("ID Produk tidak ditemukan", HttpStatus.BAD_REQUEST);
 		}
 		return new ResponseEntity<>(product, HttpStatus.OK);
@@ -53,7 +53,7 @@ public class ProductController {
 	public ResponseEntity<?> updateProductById(@RequestBody Product product, @RequestParam Long id) {
 		try {
 			Optional<Product> checkProduct = productService.findProductById(id);
-			if (checkProduct.isEmpty()) {
+			if (!checkProduct.isPresent()) {
 				return new ResponseEntity<>("ID Data produk tidak sesuai", HttpStatus.BAD_REQUEST);
 			}
 			product.setId(id);
@@ -69,4 +69,3 @@ public class ProductController {
 	}
 
 }
-
