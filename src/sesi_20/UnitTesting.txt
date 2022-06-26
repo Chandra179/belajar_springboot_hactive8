@@ -9,3 +9,10 @@ Unit Testing Service
 1. service layer dimana layer 
    - logic dari aplikasi ini dan bisa berkomunikasi dengan repository atau database
 
+
+Plugin Apache Commons 
+- digunakan untuk menghasilkan data palsu
+- misalkan membuat nama, title,alamat menggunakan class RandomStringUtils
+
+Plugin Zalando Yang 
+- mapper yang berfungsi untuk mengubah file json menjadi object
