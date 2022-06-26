@@ -3,6 +3,8 @@ package belajar.spring.service;
 
 import belajar.spring.model.Blog;
 import belajar.spring.repository.BlogRepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,9 +15,8 @@ import java.util.stream.Collectors;
 @Service
 public class BlogService {
 
-    public BlogRepository blogRepository;
-
-    public BlogService(final BlogRepository blogRepository){this.blogRepository = blogRepository;}
+	@Autowired
+    private BlogRepository blogRepository;
 
     @Transactional(readOnly = true)
     public List<Blog> getAllBlogs(final int count){
@@ -23,5 +24,7 @@ public class BlogService {
     }
 
     @Transactional(readOnly = true)
-    public Optional<Blog> getBlog(final int id){return this.blogRepository.findById(id);}
+	public Optional<Blog> getBlog(final int id) {
+		return this.blogRepository.findById(id);
+	}
 }
