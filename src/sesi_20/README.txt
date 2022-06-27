@@ -28,3 +28,32 @@ Plugin Apache Commons
 
 Plugin Zalando Yang 
 - mapper yang berfungsi untuk mengubah file json menjadi object
+
+
+--------------------------------------
+
+
+@RunWith(SpringRunner.class) 
+- adalah sebuah alias dari class Spring Junit4 
+- ClassRunner yang menghubungkan JUnit dan Spring TestContext. 
+  Dengan SpringRunner, kita dapat mengimplementasikan JUnit dan integration test.
+
+@InjectMock
+- untuk membuat object dari class yang akan di test, dalam hal ini adalah ProductServiceImpl. 
+
+@Mock
+- membuat dependensi tiruan (mock) karena dalam class ProductServiceImpl 
+  terdapat dependensi ke ProductRepository. 
+  Sehingga nantinya kita seakan-akan berkomunikasi dengan database.
+
+@Before
+- annotasi untuk mengeksekusi pertama kali setiap dilakukan unit testing di panggil.
+
+MockitoAnnotations.initMocks(this)
+- menginisialisasi setiap property atau field yang diberi annotasi 
+
+@Mock
+- ReflectionTestUtils adalah salah satu bagian dari Spring Test Context
+  yang merupakan kumpulan dari method-method utilitas berbasis refleksi 
+  yang dilakukan unit testing dan integration test untuk memanggil
+  method private dan melakukan injection. 
