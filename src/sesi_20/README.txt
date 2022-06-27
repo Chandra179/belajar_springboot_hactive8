@@ -53,9 +53,9 @@ Plugin Zalando Yang
 MockitoAnnotations.initMocks(this)
 - menginisialisasi setiap property atau field yang diberi annotasi 
 
-@Mock
-- ReflectionTestUtils adalah salah satu bagian dari Spring Test Context
-  yang merupakan kumpulan dari method-method utilitas berbasis refleksi 
+ReflectionTestUtils 
+- adalah salah satu bagian dari Spring Test Context
+- kumpulan dari method-method utilitas berbasis refleksi 
   yang dilakukan unit testing dan integration test untuk memanggil
   method private dan melakukan injection.
 
