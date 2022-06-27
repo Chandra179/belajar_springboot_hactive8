@@ -108,6 +108,12 @@
 		  <version>${problem-spring-web.version}</version>
 		  <type>pom</type>
 		</dependency>
+		
+		<dependency>
+		    <groupId>org.jacoco</groupId> 
+		    <artifactId>jacoco-maven-plugin</artifactId>
+		    <version>0.8.3</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -132,7 +138,7 @@
 					<skip>${maven.test.skip}</skip> 
 					<destFile>${basedir}/target/coverage-reports/jacoco-unit.exec</destFile>
 					<dataFile>${basedir}/target/coverage-reports/jacoco-unit.exec</dataFile>
-					<output>files</output>
+					<!-- <output>files</output> -->
 					<append>true</append>
 					<excludes>
 						<exclude>*MethodAccess</exclude>
