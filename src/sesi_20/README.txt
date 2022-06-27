@@ -39,7 +39,8 @@ Plugin Zalando Yang
   Dengan SpringRunner, kita dapat mengimplementasikan JUnit dan integration test.
 
 @InjectMock
-- untuk membuat object dari class yang akan di test, dalam hal ini adalah ProductServiceImpl. 
+- untuk membuat object dari class yang akan di test,
+  dalam hal ini adalah ProductServiceImpl. 
 
 @Mock
 - membuat dependensi tiruan (mock) karena dalam class ProductServiceImpl 
@@ -56,4 +57,17 @@ MockitoAnnotations.initMocks(this)
 - ReflectionTestUtils adalah salah satu bagian dari Spring Test Context
   yang merupakan kumpulan dari method-method utilitas berbasis refleksi 
   yang dilakukan unit testing dan integration test untuk memanggil
-  method private dan melakukan injection. 
+  method private dan melakukan injection.
+
+@Test
+- adalah annotasi JUnit yang menandakan bahwa method testFindAll 
+  adalah sebuah method yang digunakan untuk mengetest method tertentu, 
+
+Mockito.when(productRepository.findAll()).thenReturn(datas) 
+- merupakan simulasi bahwa kita seakan-akan memangil method findAll 
+  dari productRepository dan hasil dari pemanggilan itu 
+  kemudian mengembalikan variable datas yang telah diinisialisasi. 
+
+final List actual = productService.findAllProducts()
+- simulasi bahwa eksekusi berikutnya seakan-akan kita memanggil method 
+  findAllProducts() dalam productService.
