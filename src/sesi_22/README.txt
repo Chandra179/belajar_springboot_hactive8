@@ -14,10 +14,23 @@ Sonarqube
 
 
 generate code quality
-- mvn sonar:sonar
-- kalau stuck di User cache -> restart laptop
+--------------------------------
+
+- download sonar cube
+   - C:\Users\095047\Downloads\sonarqube-9.5.0.56709\sonarqube-9.5.0.56709\bin\windows-x86-64 (SESUAIKAN DENGAN OS)
+   - run StartSonar
+   - kalau stop. restart laptop
+
 - ke localhost:9000
-- user: admin, pw: admin
+
+- LOGIN -> user: admin, pw: admin
+
 - change password
-- administration > security> disable Force user authentication (paling bawah)
+
+- administration > security > disable Force user authentication (paling bawah)
+
 - mvn sonar:sonar
+
+- ANALYSIS SUCCESSFUL, 
+  you can find the results at: 
+  http://localhost:9000/dashboard?id=com.belajar.spring%3ADemoSpringJacocoSonarcube
