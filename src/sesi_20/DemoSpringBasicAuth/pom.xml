@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.spring.rest</groupId>
-	<artifactId>DemoSpringSecurity</artifactId>
+	<artifactId>DemoSpringBasicAuth</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-boot-data-jpa</name>
-	<description>Demo project for spring security</description>
+	<name>spring-boot-basic-auth</name>
+	<description>Demo project for spring basic auth</description>
 
 	<properties>
 		<java.version>1.8</java.version>
