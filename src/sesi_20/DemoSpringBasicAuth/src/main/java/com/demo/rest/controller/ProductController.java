@@ -13,7 +13,7 @@ import com.demo.rest.entity.Product;
 import com.demo.rest.repository.ProductRepository;
 import com.demo.rest.service.ProductService;
 
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = "http://localhost:8080")
 @RestController
 @RequestMapping("/api/v1")
 public class ProductController {
