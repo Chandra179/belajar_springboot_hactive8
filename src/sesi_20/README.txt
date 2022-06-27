@@ -1,3 +1,15 @@
+fitur security
+- authentication
+- authorization -> access role, ex: dosen, mahasiswa
+
+spring-boot-startersecurity
+- component yang di bundle -> spring security config, core, web
+
+ketika kita menambahkan plugin spring boot security,
+maka semua endpoint yang telah dibuat bersifat authenticated
+atau user harus login terlebih dahulu. 
+
+
 Unit testing adalah pengujian dasar yang menguji setiap unit atau component 
 baik itu dari segi functional atau behavior.
 
