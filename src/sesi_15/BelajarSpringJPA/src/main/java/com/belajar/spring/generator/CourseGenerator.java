@@ -15,6 +15,5 @@ public class CourseGenerator {
 		Course course3 = new Course("Microservices Architecture", 9, 100);
 
 		return courseRepository.saveAll(Arrays.asList(course1, course2, course3));
-
 	}
 }
