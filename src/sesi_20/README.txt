@@ -38,36 +38,52 @@ Plugin Zalando Yang
 - ClassRunner yang menghubungkan JUnit dan Spring TestContext. 
   Dengan SpringRunner, kita dapat mengimplementasikan JUnit dan integration test.
 
+
 @InjectMock
 - untuk membuat object dari class yang akan di test,
   dalam hal ini adalah ProductServiceImpl. 
+
 
 @Mock
 - membuat dependensi tiruan (mock) karena dalam class ProductServiceImpl 
   terdapat dependensi ke ProductRepository. 
   Sehingga nantinya kita seakan-akan berkomunikasi dengan database.
 
+
 @Before
 - annotasi untuk mengeksekusi pertama kali setiap dilakukan unit testing di panggil.
 
+
 MockitoAnnotations.initMocks(this)
-- menginisialisasi setiap property atau field yang diberi annotasi 
+- menginisialisasi setiap property atau field yang diberi annotasi
+
 
 ReflectionTestUtils 
 - adalah salah satu bagian dari Spring Test Context
 - kumpulan dari method-method utilitas berbasis refleksi 
-  yang dilakukan unit testing dan integration test untuk memanggil
-  method private dan melakukan injection.
+- yang digunakan unit testing dan integration test untuk memanggil
+- set non-public fields, invoke non-public methods, inject dependencies.
+
 
 @Test
-- adalah annotasi JUnit yang menandakan bahwa method testFindAll 
-  adalah sebuah method yang digunakan untuk mengetest method tertentu, 
+- adalah annotasi JUnit yang digunakan untuk mengetest method tertentu, 
+
 
 Mockito.when(productRepository.findAll()).thenReturn(datas) 
 - merupakan simulasi bahwa kita seakan-akan memangil method findAll 
   dari productRepository dan hasil dari pemanggilan itu 
   kemudian mengembalikan variable datas yang telah diinisialisasi. 
 
+
 final List actual = productService.findAllProducts()
 - simulasi bahwa eksekusi berikutnya seakan-akan kita memanggil method 
   findAllProducts() dalam productService.
+
+
+Mockito.doNothing().when(productRepository).delete(product)
+- menggunakan method doNothing() karena pada saat melakukan eksekusi kode ini, 
+  tidak melempar data apapun.
+
+
+Mockito.verify(productRepository, times(1)).delete(product) 
+- adalah sintak untuk memastikan bahwa kode telah mengeksekusi

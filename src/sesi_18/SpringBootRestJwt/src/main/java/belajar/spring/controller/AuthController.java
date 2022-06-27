@@ -29,11 +29,14 @@ public class AuthController {
 	@PostMapping("/authenticate")
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
 
+		// buat object autentikasi -> username, password, auth token
 		authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 
+		// ambil informasi user detail
 		final UserDetails userDetails = jwtUserDetailsService
 				.loadUserByUsername(authenticationRequest.getUsername());
 
+		// generate access token dari user details
 		final String token = jwtToken.generateToken(userDetails);
 		return ResponseEntity.ok(new JwtResponse(token));
 	}
